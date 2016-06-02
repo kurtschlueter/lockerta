@@ -21,7 +21,7 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :f_training_facility
       t.text :f_comments
 
-      t.integer :l_program_tradtion
+      t.integer :l_program_tradition
       t.integer :l_community_interest
       t.integer :l_weather
       t.integer :l_nightlife
