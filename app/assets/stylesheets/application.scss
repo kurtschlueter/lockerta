@@ -1,9 +1,28 @@
+body {
+  width: 100%;
+  min-width: 340px;
+}
+
 $grid-float-breakpoint:     1000px;
 //** Point at which the navbar begins collapsing.
 $grid-float-breakpoint-max: 999px;
+$navbar-height:             90px;
+$navbar-default-bg: #000156;
+$screen-sm-max: 350px;
+$screen-md-max: 350px;
+$screen-lg-max: 350px;
+
 
 @import "bootstrap-sprockets";
-@import 'bootvars';
+@import "bootvars";
 @import "bootstrap";
 @import "bootstraptheme1";
 @import 'home';
+
+/*
+1. With dev tools open, shrinking the page width, distorts the navbar when ~340px. This problem does not occur when inspector is not open becuase chrome cannot shrink below 400px
+
+2. The hamburger has some highlighting issues. Not a big deal but it's a tad annoying.
+
+3. The dropdown is the full width of the screen. I don't like that.
+*/

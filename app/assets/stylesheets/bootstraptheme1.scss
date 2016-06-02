@@ -6,6 +6,9 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:300,400,700" !defa
 @import url($web-font-path);
 
 // Navbar =====================================================================
+.navbar-brand {
+  padding: 0px;
+}
 
 .navbar {
   @include box-shadow(none);
@@ -28,6 +31,8 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:300,400,700" !defa
     }
   }
 }
+
+
 
 // Buttons ====================================================================
 
