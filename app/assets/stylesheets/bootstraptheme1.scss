@@ -4171,7 +4171,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 100px;
+  min-height: 90px;
   margin-bottom: 21px;
   border: 1px solid transparent;
 }
@@ -4279,10 +4279,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  padding: 9.5px 15px;
+  padding: 1px 15px;
   font-size: 19px;
   line-height: 21px;
-  height: 40px;
+  height: 90px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
