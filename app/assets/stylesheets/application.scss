@@ -1,3 +1,9 @@
+$grid-float-breakpoint:     1000px;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: 999px;
+
 @import "bootstrap-sprockets";
+@import 'bootvars';
 @import "bootstrap";
 @import "bootstraptheme1";
+@import 'home';
