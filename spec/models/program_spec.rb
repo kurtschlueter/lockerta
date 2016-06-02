@@ -13,7 +13,6 @@ describe Program do
 
   context 'active model' do
     it { is_expected.to validate_presence_of(:sport) }
-    it { is_expected.to validate_presence_of(:gender) }
     it { is_expected.to validate_presence_of(:school_id) }
     it { is_expected.to validate_presence_of(:coach_id) }
   end
