@@ -79,6 +79,8 @@ GEM
     execjs (2.7.0)
     faker (1.6.3)
       i18n (~> 0.5)
+    font-awesome-sass (4.6.2)
+      sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -214,6 +216,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   faker
+  font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
