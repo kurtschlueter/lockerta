@@ -13,6 +13,8 @@ $screen-md-max: 350px;
 $screen-lg-max: 350px;
 
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootvars";
 @import "bootstrap";

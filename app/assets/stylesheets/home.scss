@@ -1,3 +1,29 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#tf-home{
+  background: url("http://i.imgur.com/2WGotDM.jpg?1") no-repeat center center;
+  background-size: 100%;
+  color: #cfcfcf;
+}
+
+#graybox {
+  padding:7%;
+}
+
+.content{
+  position: relative;
+  color: black;
+  padding: 2%;
+  margin-top: 5%;
+  .input-group {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #F48138;
+    input {
+      font-size: 1.4em;
+    }
+  }
+  background: rgba(234, 234, 234, 0.9);
+}
+
+#orange-back {
+  background-color: #F48138;
+}
