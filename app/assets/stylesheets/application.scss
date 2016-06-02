@@ -1,3 +1,8 @@
+$grid-float-breakpoint:     1000px;
+$grid-float-breakpoint-max: 999px;
+@navbar-height:             90px;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootvars"
 @import "bootstraptheme1";
