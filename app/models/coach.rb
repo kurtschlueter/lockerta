@@ -34,6 +34,10 @@ class Coach < ActiveRecord::Base
     (array.select{|item| item }.length.to_f/array.length * 100).to_i
   end
 
+  def average_coach_rating
+    ((average_player_development + average_player_relationships + average_recruiting + average_pro_connections + average_sport_knowledge)/5).round(1)
+  end
+
   def comments
     reviews.map { |review| review.hc_comments}
   end

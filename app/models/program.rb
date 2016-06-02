@@ -31,6 +31,10 @@ class Program < ActiveRecord::Base
     (array.reduce(:+)/array.length.to_f).round(1)
   end
 
+  def average_facility_rating
+    ((average_main_arena + average_home_atmosphere + average_weight_room + average_locker_room + average_training_facility)/5).round(1)
+  end
+
   def facility_comments
     reviews.map { |review| review.f_comments}
   end
