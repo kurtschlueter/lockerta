@@ -20,6 +20,7 @@ $screen-lg-max: 350px;
 @import "bootstrap";
 @import "bootstraptheme1";
 @import 'home';
+@import 'footer';
 
 /*
 1. With dev tools open, shrinking the page width, distorts the navbar when ~340px. This problem does not occur when inspector is not open becuase chrome cannot shrink below 400px
