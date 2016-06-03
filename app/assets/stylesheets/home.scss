@@ -93,3 +93,9 @@
 .individual-listing {
   border: 1px solid #D3E4F4;
 }
+
+@media (max-width: 1000px){
+  .rank-info {
+  text-align:center
+  }
+}
