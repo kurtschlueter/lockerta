@@ -30,6 +30,8 @@ users = 15.times.map do
   User.create!(password: "passwords", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, position: ['pitcher', 'catcher', 'left field', 'shortstop', 'diver', 'captain', 'quarterback', 'forward'].sample, school: schools.sample, sport: ['baseball', 'swimming', 'diving', 'basketball', 'football'].sample, admin: false, jersey_number: rand(1..25))
 end
 
+User.create!(password: "passwords", first_name: "Kurt", last_name: "Schlueter", email: "kurtbschlueter@gmail.com", position: "captain", school: "Gettysburg Collge", sport: "BO", admin: false, jersey_number: 8)
+
 articles_for_seeding = [
   {title: '7 things you learn during your first year in your college program',
     body: '7. When you step on campus your new teammates are evaluating you

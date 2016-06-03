@@ -41,13 +41,21 @@
           <li class="page-scroll">
               <a href="#news_and_media">News and Media</a>
           </li>
-          <!-- These will be conditional depending on if a user is logged in -->
-          <li class="page-scroll">
-              <a href="#login">Login</a>
-          </li>
-          <li class="page-scroll">
-              <a href="#register">Register</a>
-          </li>
+          <%if current_user%>
+            <li class="page-scroll">
+                <a href="#user_page"><%=current_user.first_name + " " + current_user.last_name[0]%></a>
+            </li>
+            <li class="page-scroll">
+                <a href="#logout">Logout</a>
+            </li>
+          <%else%>
+            <li class="page-scroll">
+                <a href="#login">Login</a>
+            </li>
+            <li class="page-scroll">
+                <a href="#register">Register</a>
+            </li>
+          <%end%>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
