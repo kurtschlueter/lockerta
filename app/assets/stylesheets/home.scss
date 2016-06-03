@@ -27,3 +27,32 @@
 #orange-back {
   background-color: #F48138;
 }
+
+.gray-back {
+  background-color: #F6F6F6;
+  margin-bottom: 1%;
+  padding-top: 0;
+  padding-bottom:0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.black-text {
+  color: black;
+}
+
+.view-button {
+  width: 100%;
+  background: #5D92C2; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#5D92C2, #6CA4DA); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#5D92C2, #6CA4DA); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#5D92C2, #6CA4DA); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#5D92C2, #6CA4DA); /* Standard syntax */
+  color: white;
+  text-decoration: underline;
+  padding-bottom: .6%;
+  border-radius: 5px;
+}
