@@ -17,7 +17,8 @@
 
 
 //= require search_autocomplete
-
+console.log('app.js')
 $(function() {
+  console.log('doc ready')
   autoComplete()
 });

@@ -10,19 +10,16 @@ var delay_in_ms = 500;
     };
   })();
 
-  // console.log('entered doc ready')
-  $(".school_search").keyup(function(e){
+$(document).delegate( ".school_search", "keyup", function(e) {
     // console.log('entered keyup')
-
+    e.preventDefault();
 
 // OK I know this isn't dry but I have to move on for now. If the keyup is a backspace, then I want the delay to be zero. If it is anything else, then It should wait 500 ms.
 
     var key_hit = e.keyCode;
-
-
     if (key_hit == 8) {
 
-      delay(function(key_hit){
+      delay(function(){
         var input = $(".school_search").val()
         $(".schools_table").empty()
 
@@ -46,8 +43,7 @@ var delay_in_ms = 500;
       }, 0);
     } else {
 
-
-      delay(function(key_hit){
+      delay(function(){
         var input = $(".school_search").val()
         $(".schools_table").empty()
 
@@ -69,9 +65,6 @@ var delay_in_ms = 500;
           }
         });
       }, 500);
-
     }
-
-
   });
 };
