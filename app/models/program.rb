@@ -4,7 +4,7 @@ class Program < ActiveRecord::Base
   has_many :reviews
   has_many :program_images
 
-  validates :sport, :school_id, :coach_id, presence: true
+  validates :sport, :school_id, :coach_id, :facility_name, presence: true
 
   def average_main_arena
     array = reviews.map {|review| review.f_main_arena.to_f }
@@ -37,5 +37,9 @@ class Program < ActiveRecord::Base
 
   def facility_comments
     reviews.map { |review| review.f_comments}
+  end
+
+  def self.top_five_facilities
+    self.all.sort_by(&:average_facility_rating).reverse[0..4]
   end
 end
