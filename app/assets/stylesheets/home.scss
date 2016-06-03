@@ -30,7 +30,7 @@
 
 .gray-back {
   background-color: #F6F6F6;
-  margin-bottom: 1%;
+  margin-bottom: 0;
   padding-top: 0;
   padding-bottom:0;
 }
@@ -54,5 +54,12 @@
   color: white;
   text-decoration: underline;
   padding-bottom: .6%;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 1%;
+  h3 {
+    padding-top: 1%;
+    margin-top: 0;
+  }
 }
+
