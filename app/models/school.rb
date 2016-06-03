@@ -3,7 +3,7 @@ class School < ActiveRecord::Base
   has_many :programs
   has_many :users
 
-  validates :name, :location, presence: true
+  validates :name, :location, :tuition, :location_population, presence: true
 
   def self.search(term)
     # puts '----------entered self.search model----------'
@@ -36,6 +36,10 @@ class School < ActiveRecord::Base
     ((average_l_program_tradition + average_l_community_interest + average_l_weather + average_l_nightlife)/4).round(1)
   end
 
+  def self.top_five_locations
+    self.all.sort_by(&:average_location_rating).reverse[0..4]
+  end
+
   def location_comments
     reviews.map { |review| review.l_comments}
   end
@@ -57,6 +61,10 @@ class School < ActiveRecord::Base
 
   def average_education_rating
     ((average_e_school_difficulty + average_e_academic_support + average_e_school_reputation)/3).round(1)
+  end
+
+  def self.top_five_educations
+    self.all.sort_by(&:average_education_rating).reverse[0..4]
   end
 
   def graduated_percent

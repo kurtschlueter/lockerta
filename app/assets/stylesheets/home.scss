@@ -39,7 +39,7 @@
 
 .gray-back {
   background-color: #F6F6F6;
-  margin-bottom: 1%;
+  margin-bottom: 0;
   padding-top: 0;
   padding-bottom:0;
 }
@@ -63,5 +63,48 @@
   color: white;
   text-decoration: underline;
   padding-bottom: .6%;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 1%;
+  h3 {
+    padding-top: 1%;
+    margin-top: 0;
+  }
+}
+
+.top-listings-header {
+  background-color: #000156;
+  color: white;
+  text-decoration: underline;
+}
+
+.top-section {
+  .top-icon {
+    margin-top:3em;
+  }
+  color: black;
+  background-color: white;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 15px;
+  width: 97.65%;
+}
+
+.spacer {
+    background-color: #000156;
+  }
+
+.top-listings {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.individual-listing {
+  border: 1px solid #D3E4F4;
+}
+
+@media (max-width: 1000px){
+  .rank-info {
+  text-align:center
+  }
 }

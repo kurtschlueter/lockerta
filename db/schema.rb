@@ -58,10 +58,11 @@ ActiveRecord::Schema.define(version: 20160601153226) do
   create_table "programs", force: :cascade do |t|
     t.string   "sport"
     t.string   "gender"
+    t.string   "facility_name"
     t.integer  "school_id"
     t.integer  "coach_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -101,8 +102,10 @@ ActiveRecord::Schema.define(version: 20160601153226) do
   create_table "schools", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "location_population"
+    t.integer  "tuition"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "users", force: :cascade do |t|
