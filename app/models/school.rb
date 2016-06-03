@@ -6,13 +6,10 @@ class School < ActiveRecord::Base
   validates :name, :location, presence: true
 
   def self.search(term)
-    puts '----------entered self.search model----------'
-    puts term
-    puts '----------------------------'
+    # puts '----------entered self.search model----------'
+    # puts term
+    # puts '----------------------------'
     @schools = where('LOWER(name) LIKE :term', term: "%#{term.downcase}%")
-    # @schools.each do |school|
-    #   puts school.name
-    # end
   end
 
   def average_l_program_tradition
