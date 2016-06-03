@@ -36,6 +36,8 @@ gem 'aws-sdk'
 
 gem 'rails_12factor', group: :production
 
+gem 'jquery-ui-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

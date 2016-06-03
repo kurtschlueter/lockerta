@@ -3,6 +3,10 @@ body {
   min-width: 340px;
 }
 
+.hidden {
+  display: none;
+}
+
 $grid-float-breakpoint:     1000px;
 //** Point at which the navbar begins collapsing.
 $grid-float-breakpoint-max: 999px;
