@@ -21,6 +21,15 @@
       font-size: 1.4em;
     }
   }
+  .schools_table {
+    position: absolute;
+    width: 76.67%;
+    margin: 0 auto;
+    border: 1px solid #F48138;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 1;
+  }
   background: rgba(234, 234, 234, 0.9);
 }
 
