@@ -22,6 +22,7 @@
 <br>
 
 <div class="row black-text">
+
   <div class="col-md-4 text-center">
     <div class="col-md-12 well gray-back">
       <h3><strong>Anonymous Reviews</strong></h3>
@@ -30,6 +31,7 @@
     </div>
     <a href="#"><div class="view-button"><h3 class="view-header">View</h3></div></a>
   </div>
+
   <div class="col-md-4 text-center">
     <div class="col-md-12 well gray-back">
       <h3><strong>Athlete Scouting Reports</strong></h3>
@@ -38,6 +40,7 @@
     </div>
     <a href="#"><div class="view-button"><h3 class="view-header">View</h3></div></a>
   </div>
+
   <div class="col-md-4 text-center">
     <div class="col-md-12 well gray-back">
       <h3><strong>Gulf South Conference</strong></h3>
@@ -46,21 +49,30 @@
     </div>
     <a href="#"><div class="view-button"><h3 class="view-header">View</h3></div></a>
   </div>
+
 </div>
 
 <br>
 
 <div>
+
   <div class="row">
-    <div class="col-md-12"><div class="col-md-12 top-listings-header"><h1>Top Rated Listings</h1></div></div>
+    <div class="col-md-12">
+      <div class="col-md-12 top-listings-header">
+        <h1>Top Rated Listings</h1>
+      </div>
+    </div>
   </div>
+
   <div class="row text-center">
+
     <div class="col-md-12 top-section">
       <div class="col-md-4">
         <img alt="Coach Icon" class="top-icon" src="<%= asset_path( 'coach_icon.png' ) %>">
         <h1>Head Coach</h1>
         <a href="#"><h3>View List</h3></a>
       </div>
+
       <div class="col-md-8 top-listings">
         <% @coaches.each do |coach| %>
         <div class="row  individual-listing">
@@ -76,6 +88,7 @@
         </div>
         <% end %>
       </div>
+
     </div>
   </div>
 
@@ -86,12 +99,14 @@
   </div>
 
   <div class="row text-center">
+
     <div class="col-md-12 top-section">
       <div class="col-md-4">
         <img alt="Facility Icon" class="top-icon" src="<%= asset_path( 'facility_icon.png' ) %>">
         <h1>Facilities</h1>
         <a href="#"><h3>View List</h3></a>
       </div>
+
       <div class="col-md-8 top-listings">
         <% @facilities.each do |program| %>
         <div class="row individual-listing">
@@ -107,6 +122,7 @@
         </div>
         <% end %>
       </div>
+
     </div>
   </div>
 
@@ -118,11 +134,13 @@
 
   <div class="row text-center">
     <div class="col-md-12 top-section">
+
       <div class="col-md-4">
         <img alt="Location Icon" class="top-icon" src="<%= asset_path( 'location_icon.png' ) %>">
         <h1>Location</h1>
         <a href="#"><h3>View List</h3></a>
       </div>
+
       <div class="col-md-8 top-listings">
         <% @locations.each do |school| %>
         <div class="row individual-listing">
@@ -138,6 +156,7 @@
         </div>
         <% end %>
       </div>
+
     </div>
   </div>
 
@@ -149,11 +168,13 @@
 
   <div class="row text-center">
     <div class="col-md-12 top-section">
+
       <div class="col-md-4">
       <img alt="Education Icon" class="top-icon" src="<%= asset_path( 'education_icon.png' ) %>">
         <h1>Education</h1>
         <a href="#"><h3>View List</h3></a>
       </div>
+
       <div class="col-md-8 top-listings">
         <% @educations.each do |school| %>
         <div class="row individual-listing">
@@ -169,7 +190,31 @@
         </div>
         <% end %>
       </div>
+
     </div>
   </div>
+</div>
+
+<br>
+
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-12 top-listings-header latest-news-header">
+        <h1>Latest News</h1>
+        <img style="float:right" class="pull-right" alt="News Icon"src="<%= asset_path( 'news_icon.png' ) %>">
+      </div>
+    </div>
+  </div>
+
+  <% Article.last(3).each do |article| %>
+    <div class="row">
+      <div class="col-md-12 top-section">
+        <%= article.title %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
 
 </div>
