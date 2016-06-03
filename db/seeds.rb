@@ -101,16 +101,16 @@ coaches = 50.times.map do
 end
 
 schools.each do |school|
-  school.programs.create(sport: "Men's Basketball", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Women's Basketball", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Men's Soccer", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Women's Soccer", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Baseball", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Softball", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Volleyball", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Men's Tennis", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Women's Tennis", school: school, coach: coaches.pop)
-  school.programs.create(sport: "Swimming & Diving", school: school, coach: coaches.pop)
+  school.programs.create(sport: "Men's Basketball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Women's Basketball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Men's Soccer", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Women's Soccer", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Baseball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Softball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Volleyball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Men's Tennis", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Women's Tennis", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Swimming & Diving", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
 end
 
 coaches = Coach.all

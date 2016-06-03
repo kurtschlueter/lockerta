@@ -67,7 +67,7 @@
             <h4><%= coach.programs.first.school.name %></h4>
             <h4><%= coach.programs.first.sport %></h4>
           </div>
-          </div>
+        </div>
         <% end %>
       </div>
     </div>
@@ -81,8 +81,64 @@
 
   <div class="row text-center">
     <div class="col-md-12 top-section">
-      <div class="col-md-4"> bai </div>
-      <div class="col-md-8"> bai </div>
+      <div class="col-md-4">
+        <img alt="Facility Icon" class="top-icon" src="<%= asset_path( 'facility_icon.png' ) %>">
+        <h1>Facilities</h1>
+        <a href="#"><h3>View List</h3></a>
+      </div>
+      <div class="col-md-8 top-listings">
+        <% @facilities.each do |program| %>
+        <div class="row individual-listing">
+          <div class="col-md-4">
+            <h3><strong><%= program.average_facility_rating %></strong></h3>
+            <%= render_stars(program.average_facility_rating) %>
+          </div>
+          <div class="col-md-8 text-left">
+            <h3><strong><%= program.facility_name %></strong></h3>
+            <h4><%= program.school.name %></h4>
+            <h4><%= program.sport %></h4>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
+
+  <div class="row text-center">
+    <div class="col-md-12 top-section spacer">
+      <br>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-12 top-section">
+      <div class="col-md-4">
+        <img alt="Facility Icon" class="top-icon" src="<%= asset_path( 'facility_icon.png' ) %>">
+        <h1>Location</h1>
+        <a href="#"><h3>View List</h3></a>
+      </div>
+      <div class="col-md-8 top-listings">
+        <% @locations.each do |school| %>
+        <div class="row individual-listing">
+          <div class="col-md-4">
+            <h3><strong><%= school.average_facility_rating %></strong></h3>
+            <%= render_stars(school.average_facility_rating) %>
+          </div>
+          <div class="col-md-8 text-left">
+            <h3><strong><%= school.facility_name %></strong></h3>
+            <h4><%= school.school.name %></h4>
+            <h4><%= school.sport %></h4>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-12 top-section spacer">
+      <br>
+    </div>
+  </div>
+
 </div>
