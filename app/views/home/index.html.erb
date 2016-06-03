@@ -141,4 +141,29 @@
     </div>
   </div>
 
+  <div class="row text-center">
+    <div class="col-md-12 top-section">
+      <div class="col-md-4">
+      <img alt="Education Icon" class="top-icon" src="<%= asset_path( 'education_icon.png' ) %>">
+        <h1>Education</h1>
+        <a href="#"><h3>View List</h3></a>
+      </div>
+      <div class="col-md-8 top-listings">
+        <% @educations.each do |school| %>
+        <div class="row individual-listing">
+          <div class="col-md-4">
+            <h3><strong><%= school.average_education_rating %></strong></h3>
+            <%= render_stars(school.average_education_rating) %>
+          </div>
+          <div class="col-md-8 text-left">
+            <h3><strong><%= school.name %></strong></h3>
+            <h4>Tuition: <%= school.tuition %></h4>
+            <h4>Population: <%= school.location %></h4>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
