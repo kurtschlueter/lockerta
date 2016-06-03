@@ -8,18 +8,15 @@ User.destroy_all
 
 schools_for_seeding = [
   {name: 'University of West Florida',
-    location: 'Pensacola, FL'},
+    location: 'Pensacola, FL', tuition: rand(14358..34594), location_population: rand(14358..34594)},
   {name: 'Christian Brothers University',
-    location: 'Memphis, TN'},
+    location: 'Memphis, TN', tuition: rand(14358..34594), location_population: rand(14358..34594)},
   {name: 'Delta State University',
-    location: 'Cleveland, MS'
-  },
+    location: 'Cleveland, MS' , tuition: rand(14358..34594), location_population: rand(14358..34594)},
   {name: 'Lee University',
-    location: 'Cleveland, TN'
-  },
+    location: 'Cleveland, TN', tuition: rand(14358..34594), location_population: rand(14358..34594)},
   {name: 'Mississippi College',
-    location: 'Clinton, MS'
-  }
+    location: 'Clinton, MS', tuition: rand(14358..34594), location_population: rand(14358..34594)}
 ]
 
 School.create!(schools_for_seeding)
