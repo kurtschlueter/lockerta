@@ -41,3 +41,48 @@
     <a href="#"><div class="view-button"><h3 class="view-header">View</h3></div></a>
   </div>
 </div>
+
+<br>
+
+<div>
+  <div class="row">
+    <div class="col-md-12"><div class="col-md-12 top-listings-header"><h1>Top Rated Listings</h1></div></div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-12 top-section">
+      <div class="col-md-4">
+        <img alt="Coach Icon" class="top-icon" src="<%= asset_path( 'coach_icon.png' ) %>">
+        <h1>Head Coach</h1>
+        <a href="#"><h3>View List</h3></a>
+      </div>
+      <div class="col-md-8 top-listings">
+        <% @coaches.each do |coach| %>
+        <div class="row  individual-listing">
+          <div class="col-md-4">
+            <h3><strong><%= coach.average_coach_rating %></strong></h3>
+            <%= render_stars(coach.average_coach_rating) %>
+          </div>
+          <div class="col-md-8 text-left">
+            <h3><strong><%= coach.first_name + ' ' + coach.last_name %></strong></h3>
+            <h4><%= coach.programs.first.school.name %></h4>
+            <h4><%= coach.programs.first.sport %></h4>
+          </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-12 top-section spacer">
+      <br>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-12 top-section">
+      <div class="col-md-4"> bai </div>
+      <div class="col-md-8"> bai </div>
+    </div>
+  </div>
+</div>

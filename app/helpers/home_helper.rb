@@ -9,8 +9,8 @@ module HomeHelper
     end
     if (value < 0.5)
       5.times { output += image_tag('empty-star.png')}
-    elsif (value < 4)
-      (5 - value.floor - 1).times { output += image_tag('empty-star.png') }
+    elsif (value < 4 && ![1,2,3,4,5].include?(value + 0.5))
+      (5 - value).round.times { output += image_tag('empty-star.png') }
     elsif(value < 4.5)
       output += image_tag('empty-star.png')
     end
