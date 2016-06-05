@@ -30,9 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 gem 'faker'
-
-gem 'aws-sdk'
 
 gem 'rails_12factor', group: :production
 
