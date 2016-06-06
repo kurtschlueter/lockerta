@@ -8,7 +8,30 @@ var ratingsHover = function() {
       $this.data('alt-src', $this.attr('src'));
       $this.attr('src', newSource);
 
-      debugger
+    var current_id_tag = $(this).parent().attr('id')
+    var current_id_num = parseInt(current_id_tag.slice(-1))
+
+    // var $this2;
+    // var newSource2;
+    // debugger
+    var thisArray = $this.parent().prevAll();
+    // debugger
+    for (var star_index = 0; star_index < thisArray.length; star_index++){
+
+    var $this2 = $(thisArray[star_index]).children();
+    var newSource2 = $this2.data('alt-src');
+    $this2.data('alt-src', $this2.attr('src'));
+    $this2.attr('src', newSource2);
+
+    // for (var star_index = 0; star_index < $thisArray.length; star_index++){
+    //   debugger
+    //   var $this2 = $thisArray[star_index].children[0];
+    //   var newSource2 = $this2.data('alt-src');
+    //   $this2.data('alt-src', $this2.attr('src'));
+    //   $this2.attr('src', newSource2);
+
+    }
+
   }
 
   $('.rating-stars-img').hover(sourceSwap, sourceSwap);
