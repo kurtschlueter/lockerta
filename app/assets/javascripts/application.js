@@ -21,5 +21,25 @@ console.log('app.js')
 $(document).ready(function(){
   console.log('doc ready')
   autoComplete()
-  $('[data-toggle="popover"]').popover();
+
+  // $(document).delegate( '.aaaa', "popover", function(e) {
+  //   console.log('entered keyup')
+  //   e.preventDefault();
+  // })
+
+
+$(document).on('click', '.aaaa', function (e) {
+    // code here
+    e.preventDefault();
+
+    console.log('entered keyup')
+    $('[data-toggle="popover"]').popover();
+});
+  // $('[data-toggle="popover"]').popover();
+
+
+//   $('body').on('hidden.bs.popover', function () {
+//   // do something…
+//   console.log('entered k2eyup')
+// })
 });
