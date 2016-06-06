@@ -123,17 +123,7 @@
 
       <div class="col-md-8 top-listings">
         <% @locations.each do |school| %>
-        <div class="row individual-listing">
-          <div class="col-md-4">
-            <h3><strong><%= school.average_location_rating %></strong></h3>
-            <%= render_stars(school.average_location_rating) %>
-          </div>
-          <div class="col-md-8 text-left rank-info">
-            <h3><strong><%= school.location %></strong></h3>
-            <h4><%= school.name %></h4>
-            <h4>Population: <%= school.location_population %></h4>
-          </div>
-        </div>
+          <%= render partial: 'schools/location_rankings', locals: {school: school} %>
         <% end %>
       </div>
 
@@ -157,17 +147,7 @@
 
       <div class="col-md-8 top-listings">
         <% @educations.each do |school| %>
-        <div class="row individual-listing">
-          <div class="col-md-4">
-            <h3><strong><%= school.average_education_rating %></strong></h3>
-            <%= render_stars(school.average_education_rating) %>
-          </div>
-          <div class="col-md-8 text-left rank-info">
-            <h3><strong><%= school.name %></strong></h3>
-            <h4>Tuition: <%= school.tuition %></h4>
-            <h4>Population: <%= school.location %></h4>
-          </div>
-        </div>
+          <%= render partial: 'schools/education_rankings', locals: {school: school} %>
         <% end %>
       </div>
 
