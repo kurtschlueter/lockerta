@@ -99,8 +99,13 @@
   padding-left: 0;
 }
 
-.individual-listing {
+.individual-listing, .each-article {
   border: 1px solid #D3E4F4;
+}
+
+.center-image {
+  margin: 0 auto;
+  padding: 1em;
 }
 
 @media (max-width: 1000px){
@@ -108,3 +113,17 @@
   text-align:center
   }
 }
+
+.latest-news-header {
+  padding-right: 0;
+    h1 {
+      display: inline;
+    }
+}
+
+.gray-date {
+  font-style: italic;
+  color: gray;
+}
+
+

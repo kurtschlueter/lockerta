@@ -16,4 +16,8 @@ module HomeHelper
     end
     output.html_safe
   end
+
+  def nice_date(date)
+    date.strftime("%B %-dth, %Y")
+  end
 end
