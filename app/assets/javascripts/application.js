@@ -17,7 +17,10 @@
 
 
 //= require search_autocomplete
-
-$(function() {
+//= require link_hover
+console.log('app.js')
+$(document).ready(function(){
+  console.log('doc ready')
   autoComplete()
+  linkHover()
 });

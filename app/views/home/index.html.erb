@@ -123,7 +123,9 @@
 
       <div class="col-md-8 top-listings">
         <% @locations.each do |school| %>
+
           <%= render partial: 'schools/location_rankings', locals: {school: school} %>
+
         <% end %>
       </div>
 

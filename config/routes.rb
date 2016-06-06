@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :schools do
     get :search, :on => :collection
+    get :program_list_in_school, :on => :collection
   end
 
   resources :articles

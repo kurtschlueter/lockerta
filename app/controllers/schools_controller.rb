@@ -9,4 +9,14 @@ class SchoolsController < ApplicationController
       render :json => {:data => @schools}
     end
   end
+
+  def program_list_in_school
+    @school = School.find_by(name: params[:input])
+    puts '----------------------'
+    puts @school.name
+    @programs = @school.programs
+    if request.xhr?
+      render :json => {:data => @programs}
+    end
+  end
 end
