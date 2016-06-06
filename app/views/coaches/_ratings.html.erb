@@ -1,0 +1,11 @@
+<div class="row  individual-listing">
+          <div class="col-md-4">
+            <h3><strong><%= coach.average_coach_rating %></strong></h3>
+            <%= render_stars(coach.average_coach_rating) %>
+          </div>
+          <div class="col-md-8 text-left rank-info">
+            <h3><strong><%= coach.first_name + ' ' + coach.last_name %></strong></h3>
+            <h4><%= coach.programs.first.school.name %></h4>
+            <h4><%= coach.programs.first.sport %></h4>
+          </div>
+        </div>
