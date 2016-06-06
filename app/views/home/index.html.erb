@@ -211,6 +211,8 @@
     <div class="row">
       <div class="col-md-12 top-section">
         <%= article.title %>
+        <%= image_tag article.media.url(:standard), :class => "img img-responsive" %>
+
       </div>
     </div>
   <% end %>
