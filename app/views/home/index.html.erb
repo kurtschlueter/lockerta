@@ -99,17 +99,7 @@
 
       <div class="col-md-8 top-listings">
         <% @facilities.each do |program| %>
-        <div class="row individual-listing">
-          <div class="col-md-4">
-            <h3><strong><%= program.average_facility_rating %></strong></h3>
-            <%= render_stars(program.average_facility_rating) %>
-          </div>
-          <div class="col-md-8 text-left rank-info">
-            <h3><strong><%= program.facility_name %></strong></h3>
-            <h4><%= program.school.name %></h4>
-            <h4><%= program.sport %></h4>
-          </div>
-        </div>
+          <%= render partial: 'programs/facility_rankings', locals: {program: program} %>
         <% end %>
       </div>
 
