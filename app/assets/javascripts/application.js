@@ -22,31 +22,35 @@ $(document).ready(function(){
   console.log('doc ready')
   autoComplete()
 
-  // $(document).delegate( '.aaaa', "popover", function(e) {
-  //   console.log('entered keyup')
-  //   e.preventDefault();
-  // })
+  // $(document).popover({
+  //     selector: '.hover-class',
+  //     trigger: 'hover',
+  //     delay: { "show": 100, "hide": 10000 }
+  // });
+
+var originalLeave = $.fn.popover.Constructor.prototype.leave;
+$.fn.popover.Constructor.prototype.leave = function(obj){
+  var self = obj instanceof this.constructor ?
+    obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
+  var container, timeout;
+
+  originalLeave.call(this, obj);
+
+  if(obj.currentTarget) {
+    container = $(obj.currentTarget).siblings('.popover')
+    timeout = self.timeout;
+    container.one('mouseenter', function(){
+      //We entered the actual popover – call off the dogs
+      clearTimeout(timeout);
+      //Let's monitor popover content instead
+      container.one('mouseleave', function(){
+        $.fn.popover.Constructor.prototype.leave.call(self, self);
+      });
+    })
+  }
+};
 
 
-// $(document).on('mouseover', '.aaaa', function (e) {
-    // code here
-//     $('[data-toggle="popover"]').popover();
-//     e.preventDefault();
-
-//     console.log('entered keyup')
-//     // $('[data-toggle="popover"]').popover();
-// });
-  // $('[data-toggle="popover"]').popover();
-
-
-//   $('body').on('hidden.bs.popover', function () {
-//   // do something…
-//   console.log('entered k2eyup')
-// })
-
-$(document).popover({
-    selector: '.aaaa',
-    trigger: 'hover'
-});
+$('body').popover({ selector: '.hover-class', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 
 });
