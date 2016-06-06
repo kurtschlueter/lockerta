@@ -23,18 +23,39 @@ var linkHover = function() {
     }
   };
 
-  var testFunc = function() {
-    return "Hello2"
-  }
+  $(document).on('mouseover', '.location-div', function(e) {
+      var $tr = $(this);
+      var jsonToHTMLtable = function(jsonn) {
+        console.log('entered jsontohtmltable func')
+        var jsonHTML = '<ul>'
+        // debugger
+        for (var ii = 0; ii < jsonn.data.length; ii++) {
+          console.log('entered for loop')
+            jsonHTML = jsonHTML + "<li>" + jsonn.data[ii].sport + "</li>"
+            // debugger
+        }
 
-  $(document).popover({
-    selector: '.location-div',
-    trigger: 'click hover',
-    placement: 'bottom',
-    title: 'Which team would you like to view?',
-    content: testFunc(),
-    delay: {show: 50, hide: 400}
+        // for (var jsonArrayIndex=0; jsonArrayIndex<jsonn.data.length; jsonArrayIndex++){console.log('yes')}
+        jsonHTML = jsonHTML + '</ul>'
+        // debugger
+        return jsonHTML
+      }
+
+      $.ajax({
+        url: '/schools/program_list_in_school',
+        type: "GET",
+        dataType: "json",
+        data: { input: $(this).html() },
+        success: function(response){
+              $tr.popover({
+                  title: 'Relance',
+                  content: jsonToHTMLtable(response),
+                  placement: 'bottom',
+                  html: true,
+                  trigger: 'hover',
+                  delay: {show: 50, hide: 400}
+              }).popover('show');
+        }
+      });
   });
-
-
 }
