@@ -28,13 +28,14 @@ $(document).ready(function(){
   // })
 
 
-$(document).on('click', '.aaaa', function (e) {
+// $(document).on('mouseover', '.aaaa', function (e) {
     // code here
-    e.preventDefault();
+//     $('[data-toggle="popover"]').popover();
+//     e.preventDefault();
 
-    console.log('entered keyup')
-    $('[data-toggle="popover"]').popover();
-});
+//     console.log('entered keyup')
+//     // $('[data-toggle="popover"]').popover();
+// });
   // $('[data-toggle="popover"]').popover();
 
 
@@ -42,4 +43,10 @@ $(document).on('click', '.aaaa', function (e) {
 //   // do something…
 //   console.log('entered k2eyup')
 // })
+
+$(document).popover({
+    selector: '.aaaa',
+    trigger: 'hover'
+});
+
 });
