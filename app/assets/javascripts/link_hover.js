@@ -27,16 +27,16 @@ var linkHover = function() {
       var $tr = $(this);
       var jsonToHTMLtable = function(jsonn) {
         console.log('entered jsontohtmltable func')
-        var jsonHTML = '<ul>'
+        var jsonHTML = '<table class="table table-striped table-hover"><tbody>'
         // debugger
         for (var ii = 0; ii < jsonn.data.length; ii++) {
           console.log('entered for loop')
-            jsonHTML = jsonHTML + "<li>" + jsonn.data[ii].sport + "</li>"
+            jsonHTML = jsonHTML + "<tr class='danger'><td>" + jsonn.data[ii].sport + "</tr></td>"
             // debugger
         }
 
         // for (var jsonArrayIndex=0; jsonArrayIndex<jsonn.data.length; jsonArrayIndex++){console.log('yes')}
-        jsonHTML = jsonHTML + '</ul>'
+        jsonHTML = jsonHTML + '</tbody></table>'
         // debugger
         return jsonHTML
       }
@@ -48,7 +48,7 @@ var linkHover = function() {
         data: { input: $(this).html() },
         success: function(response){
               $tr.popover({
-                  title: 'Relance',
+                  title: 'Which team would you like to view?',
                   content: jsonToHTMLtable(response),
                   placement: 'bottom',
                   html: true,
