@@ -18,7 +18,8 @@
 
 //= require search_autocomplete
 console.log('app.js')
-$(function() {
+$(document).ready(function(){
   console.log('doc ready')
   autoComplete()
+  $('[data-toggle="popover"]').popover();
 });
