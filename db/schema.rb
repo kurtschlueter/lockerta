@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160601153226) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
+    t.string   "subtitle"
     t.text     "body"
     t.integer  "user_id"
     t.string   "media_file_name"

@@ -53,7 +53,8 @@ articles_for_seeding = [
     1. Scholarships are not 4 years long
     It is a common misconception that once you sign your scholarship, you are locked in for  4 years. Scholarships are only valid for 1 year and the athletic program has the discretion to renew, reduce, or terminate the scholarship at the end of the year for any reason.',
     user: users.sample,
-    media: File.open("app/assets/images/article_images/1.jpg")},
+    media: File.open("app/assets/images/article_images/1.jpg"),
+    subtitle: 'Florida led to SEC Championship byhighly touted recruiting class'},
   {title: '5 Benefits of Being a College Athlete',
     body: "Being a college athlete is unique opportunity that provides numerous benefits, below are a look at some of the top benefits of being a college athlete.
 
@@ -72,7 +73,8 @@ articles_for_seeding = [
       1. Ability to keep playing the sport you love.
       As any athlete will tell you, you won’t be able to play the sport you love for the rest of your life. Even those who make it to the professional level must eventually transition to life after sports. Student-athletes are provided with the unique opportunity to compete at a high level and represent their campus in competition.  Playing a sport in college is a once in a lifetime opportunity that produces life-long memories.",
       user: users.sample,
-      media: File.open("app/assets/images/article_images/2.jpg")},
+      media: File.open("app/assets/images/article_images/2.jpg"),
+      subtitle: 'Florida led to SEC Championship byhighly touted recruiting class'},
   {title: 'JerseyTalk Releases at West Florida',
     body: "JerseyTalk has released at the University of West Florida allowing college athletes from 2011 and after to provide a review on their college program. Reviews cover the program’s head coach, facilities, education and location. After writing a review, athletes can debate topics on current and former teammates as well as answer questions from recruits and fans in the Discussion area.
 
@@ -91,7 +93,8 @@ articles_for_seeding = [
       Women’s Tennis
       Swimming & Diving",
       user: users.sample,
-      media: File.open("app/assets/images/article_images/3.jpg")}
+      media: File.open("app/assets/images/article_images/3.jpg"),
+    subtitle: 'Florida led to SEC Championship byhighly touted recruiting class'}
   ]
 
 Article.create!(articles_for_seeding)

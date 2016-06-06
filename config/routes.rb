@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get :search, :on => :collection
   end
 
+  resources :articles
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
