@@ -11,7 +11,7 @@ var delay_in_ms = 500;
   })();
 
 $(document).delegate( ".school_search", "keyup", function(e) {
-    // console.log('entered keyup')
+    console.log('entered keyup')
     e.preventDefault();
 
 // OK I know this isn't dry but I have to move on for now. If the keyup is a backspace, then I want the delay to be zero. If it is anything else, then It should wait 500 ms.

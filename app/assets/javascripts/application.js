@@ -17,40 +17,10 @@
 
 
 //= require search_autocomplete
+//= require link_hover
 console.log('app.js')
 $(document).ready(function(){
   console.log('doc ready')
   autoComplete()
-
-  // $(document).popover({
-  //     selector: '.hover-class',
-  //     trigger: 'hover',
-  //     delay: { "show": 100, "hide": 10000 }
-  // });
-
-var originalLeave = $.fn.popover.Constructor.prototype.leave;
-$.fn.popover.Constructor.prototype.leave = function(obj){
-  var self = obj instanceof this.constructor ?
-    obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
-  var container, timeout;
-
-  originalLeave.call(this, obj);
-
-  if(obj.currentTarget) {
-    container = $(obj.currentTarget).siblings('.popover')
-    timeout = self.timeout;
-    container.one('mouseenter', function(){
-      //We entered the actual popover – call off the dogs
-      clearTimeout(timeout);
-      //Let's monitor popover content instead
-      container.one('mouseleave', function(){
-        $.fn.popover.Constructor.prototype.leave.call(self, self);
-      });
-    })
-  }
-};
-
-
-$('body').popover({ selector: '.hover-class', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
-
+  linkHover()
 });
