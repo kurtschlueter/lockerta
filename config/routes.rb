@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get :program_list_in_school, :on => :collection
   end
 
+  resources :articles
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
