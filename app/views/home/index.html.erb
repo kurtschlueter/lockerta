@@ -217,7 +217,7 @@
           <h2><%= article.title %></h2>
           <h4><%= article.subtitle %></h4>
           <%= link_to "View Article >>>", article %>
-          <p class="pull-right gray-date"><%= article.updated_at %></p>
+          <p class="pull-right gray-date"><%= nice_date(article.updated_at) %></p>
         </div>
       </div>
     </div>
