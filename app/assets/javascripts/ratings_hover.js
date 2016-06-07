@@ -1,31 +1,8 @@
 var ratingsHover = function() {
   console.log('ratings hover function entered')
 
-
-  var sourceSwap = function () {
-      var $this = $(this);
-      var newSource = $this.data('fullstar');
-      $this.data('fullstar', $this.attr('src'));
-      $this.attr('src', newSource);
-
-    var current_id_tag = $(this).parent().attr('id')
-    var current_id_num = parseInt(current_id_tag.slice(-1))
-
-    var thisArray = $this.parent().prevAll();
-    // debugger
-    for (var star_index = 0; star_index < thisArray.length; star_index++){
-
-    var $this2 = $(thisArray[star_index]).children();
-    var newSource2 = $this2.data('fullstar');
-    // $this2.data('fullstar', $this2.attr('src'));
-    $this2.attr('src', newSource2);
-    }
-  }
-
-  // $('.rating-stars-img').hover(sourceSwap, sourceSwap);
-
   $(document).on('mouseenter', '.rating-stars-img', function(e) {
-console.log('mouseenter')
+    // console.log('mouseenter')
     var $this = $(this);
     if($this.hasClass('selected') == false) {
       var newSource = $this.data('fullstar');
@@ -48,7 +25,7 @@ console.log('mouseenter')
 
 
   $(document).on('mouseleave', '.rating-stars-img', function(e) {
-console.log('mouseleave')
+    // console.log('mouseleave')
     var $this = $(this);
     if($this.hasClass('selected') == false) {
       var newSource = $this.data('emptystar');
@@ -71,9 +48,8 @@ console.log('mouseleave')
   });
 
   $(document).on('click', '.rating-stars', function(e) {
-    $('.rating-stars-img').unbind("mouseleave");
 
-    console.log('entered star click');
+    // console.log('entered star click');
       var $this33 = $(this).children();
       var newSource33 = $this33.data('fullstar');
       $this33.data('currentstar', newSource33);
@@ -99,6 +75,4 @@ console.log('mouseleave')
 
     }
   });
-
-
 }

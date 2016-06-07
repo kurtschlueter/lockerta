@@ -16,7 +16,7 @@
             <% 5.times do |x|%>
               <% current_id = 'player' + (x+1).to_s%>
               <a href="#" id=<%=current_id%> class="rating-stars">
-                <img class="rating-stars-img" alt="emptystar" src="<%= asset_path( 'empty-star.png' ) %>" data-fullstar="<%= asset_path( 'full-star.png' ) %>" data-emptystar="<%= asset_path( 'empty-star.png' ) %>" data-currentstar="<%= asset_path( 'empty-star.png' ) %>">
+                <img class="rating-stars-img" alt="emptystar" src="<%= asset_path( 'empty-star.png' ) %>" data-fullstar="<%= asset_path( 'full-star.png' ) %>" data-emptystar="<%= asset_path( 'empty-star.png' ) %>">
               </a>
             <% end %>
           </div>
