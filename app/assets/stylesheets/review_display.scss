@@ -1,0 +1,27 @@
+.review-show-container {
+  margin-top: 120px;
+  background-color: #f6f6f6;
+  color: black;
+  position: relative;
+}
+
+.sport-name {
+  margin-top: 0;
+  clear: both;
+}
+
+.school-name {
+  font-weight:600;
+}
+
+.write-review-display {
+  background-color: #F67B29;
+  color: #FFFFFF;
+  position:absolute;
+  top: 2em;
+  right: 4em;
+  padding:1em 4em;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+}

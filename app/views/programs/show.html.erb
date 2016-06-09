@@ -1,0 +1,15 @@
+<div class="container review-show-container">
+
+  <% if @program %>
+
+    <strong><h2 class="pull-left school-name"><%= @program.school.name %></h2></strong>
+    <a href="#" class="pull-right write-review-display">Write Review</a>
+    <h2 class="pull-left sport-name"><%= @program.sport %></h2>
+
+  <% else %>
+
+    <h2 class="text-center">We couldn't find the program you were looking for. Please try again.</h2>
+
+  <% end %>
+
+</div>
