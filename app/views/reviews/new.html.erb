@@ -1,0 +1,45 @@
+<div class="text-center">
+  <div>
+    <div class="content">
+      <h1><strong>Review Your College Program</strong></h1>
+
+    </div>
+  </div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-success" id="progressbarselectprogram" role="progressbar" style="width:16.7%">
+    Select Program
+  </div>
+  <div class="progress-bar progress-bar-warning" id="progressbarheadcoach" role="progressbar" style="width:16.7%">
+    Head Coach
+  </div>
+  <div class="progress-bar progress-bar-warning" id="progressbarfacilities" role="progressbar" style="width:16.7%">
+    Facilities
+  </div>
+  <div class="progress-bar progress-bar-warning" id="progressbarlocation" role="progressbar" style="width:16.7%">
+    Location
+  </div>
+  <div class="progress-bar progress-bar-warning" id="progressbareducation" role="progressbar" style="width:16.7%">
+    Education
+  </div>
+  <div class="progress-bar progress-bar-warning" id="progressbarconfirmation" role="progressbar" style="width:16.5%">
+    Confirmation
+  </div>
+</div>
+
+<form class="form-horizontal">
+
+  <%= render partial: 'select_program_form' %>
+
+  <%= render partial: 'head_coach_form' %>
+
+  <%= render partial: 'facilities_form' %>
+
+  <%= render partial: 'location_form' %>
+
+  <%= render partial: 'education_form' %>
+
+  <%= render partial: 'confirmation_form' %>
+</form>
+

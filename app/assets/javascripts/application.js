@@ -19,6 +19,7 @@
 //= require search_autocomplete
 //= require link_hover
 //= require ratings_hover
+//= require review_form
 
 console.log('app.js')
 $(document).ready(function(){
@@ -26,4 +27,5 @@ $(document).ready(function(){
   autoComplete()
   linkHover()
   ratingsHover()
+  reviewForm()
 });
