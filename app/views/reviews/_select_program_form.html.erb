@@ -1,0 +1,60 @@
+<fieldset id='reviewformselectprogramtab'>
+
+  <legend><h1>Program</h1></legend>
+
+  <!-- Select Basic -->
+  <div class="form-group" id="review_program_select_school_div">
+    <label class="col-md-4 control-label" for="selectbasic">Select School</label>
+    <div class="col-md-4">
+      <select name="selectbasic" class="form-control" id="review_program_select_school_dropdown">
+        <option value="1"> Select School </option>
+        <% @schools.each.with_index(2) do |school, index| %>
+          <option value="<%= (index).to_s %>"><%=school.name%></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group hidden" id="review_program_select_program_div">
+    <label class="col-md-4 control-label" for="selectbasic">Select Program</label>
+    <div class="col-md-4">
+      <select name="selectbasic" class="form-control" id="review_program_select_program_dropdown">
+      </select>
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group hidden" id="review_program_select_headcoach_div">
+    <label class="col-md-4 control-label" for="selectbasic">Select Head Coach</label>
+    <div class="col-md-4">
+      <select name="selectbasic" class="form-control" id="review_program_select_headcoach_dropdown">
+      </select>
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group hidden" id="review_program_select_rival_div">
+    <label class="col-md-4 control-label" for="Select Conference Rival">Conference Rival</label>
+    <div class="col-md-4">
+      <input id="textinput" name="Select Conference Rival" type="text" class="form-control input-md" id="review_program_select_rival_input">
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group hidden" id="review_program_select_toughestplace_div">
+    <label class="col-md-4 control-label" for="selectbasic">Toughest Place to Play</label>
+    <div class="col-md-4">
+      <input id="textinput" name="Select Conference Rival" type="text" class="form-control input-md" id="review_program_select_toughestplace_input">
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="singlebutton"></label>
+    <div class="col-md-4">
+      <button id="reviewformgetstarted" name="getstarted" class="btn btn-primary">Get Started!</button>
+    </div>
+  </div>
+
+</fieldset>

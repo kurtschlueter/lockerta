@@ -7,6 +7,10 @@ body {
   display: none;
 }
 
+.invisible {
+  visability: none;
+}
+
 $grid-float-breakpoint:     1000px;
 //** Point at which the navbar begins collapsing.
 $grid-float-breakpoint-max: 999px;

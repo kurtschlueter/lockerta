@@ -1,0 +1,69 @@
+<fieldset id='reviewformeducationtab' class='hidden'>
+
+  <legend>
+    <div class="col-md-4">
+      <img alt="Education Icon" class="top-icon" src="<%= asset_path( 'education_icon.png' ) %>">
+      <h1>Education</h1>
+    </div>
+  </legend>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-6 control-label" for="selectbasic">School Difficulty</label>
+    <div class="col-md-3">
+      <%= render partial: 'stars_div' %>
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-6 control-label" for="selectbasic">Academic Support</label>
+    <div class="col-md-3">
+      <%= render partial: 'stars_div' %>
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-6 control-label" for="selectbasic">School Reputation</label>
+    <div class="col-md-3">
+      <%= render partial: 'stars_div' %>
+    </div>
+  </div>
+
+  <!-- radio group -->
+  <div class="form-group">
+    <label class="col-md-6 control-label" for="radios">Did you Graduate?</label>
+    <div class="col-md-3">
+      <label class="radio-inline" for="radios-2">
+        <input type="radio" name="radios" id="radios-2" value="false" checked="checked">
+        Yes
+      </label>
+      <label class="radio-inline" for="radios-3">
+        <input type="radio" name="radios" id="radios-3" value="true">
+        No
+      </label>
+    </div>
+  </div>
+
+
+  <!-- Textarea -->
+  <div class="form-group">
+    <label class="col-md-6 control-label" for="textarea">Additional Comments About the Education</label>
+    <div class="col-md-3">
+      <textarea class="form-control" id="textarea" name="textarea"></textarea>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="singlebutton"></label>
+    <div class="col-md-1">
+      <button id="reviewformbacktolocation" name="singlebutton" class="btn btn-primary">Location</button>
+    </div>
+    <div class="col-md-1">
+      <button id="reviewformconfirmation" name="singlebutton" class="btn btn-primary">Confirmation</button>
+    </div>
+  </div>
+
+</fieldset>

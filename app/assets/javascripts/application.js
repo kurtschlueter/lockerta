@@ -18,12 +18,16 @@
 
 //= require search_autocomplete
 //= require link_hover
+//= require ratings_hover
+//= require review_form_tabbing
+//= require review_form_program
+
 console.log('app.js')
 $(document).ready(function(){
   console.log('doc ready')
   autoComplete()
   linkHover()
+  ratingsHover()
+  reviewFormTabbing()
+  reviewFormProgram()
 });
-
-
-
