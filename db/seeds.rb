@@ -8,15 +8,15 @@ User.destroy_all
 
 schools_for_seeding = [
   {name: 'University of West Florida',
-    location: 'Pensacola, FL', tuition: rand(14358..34594), location_population: rand(14358..34594)},
+    location: 'Pensacola, FL', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
   {name: 'Christian Brothers University',
-    location: 'Memphis, TN', tuition: rand(14358..34594), location_population: rand(14358..34594)},
+    location: 'Memphis, TN', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
   {name: 'Delta State University',
-    location: 'Cleveland, MS' , tuition: rand(14358..34594), location_population: rand(14358..34594)},
+    location: 'Cleveland, MS' , tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
   {name: 'Lee University',
-    location: 'Cleveland, TN', tuition: rand(14358..34594), location_population: rand(14358..34594)},
+    location: 'Cleveland, TN', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
   {name: 'Mississippi College',
-    location: 'Clinton, MS', tuition: rand(14358..34594), location_population: rand(14358..34594)}
+    location: 'Clinton, MS', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)}
 ]
 
 School.create!(schools_for_seeding)
@@ -104,16 +104,16 @@ coaches = 50.times.map do
 end
 
 schools.each do |school|
-  school.programs.create(sport: "Men's Basketball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Women's Basketball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Men's Soccer", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Women's Soccer", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Baseball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Softball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Volleyball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Men's Tennis", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Women's Tennis", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
-  school.programs.create(sport: "Swimming & Diving", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample)
+  school.programs.create(sport: "Men's Basketball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Women's Basketball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Men's Soccer", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Women's Soccer", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Baseball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Softball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Volleyball", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Men's Tennis", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Women's Tennis", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
+  school.programs.create(sport: "Swimming & Diving", school: school, coach: coaches.pop, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/')
 end
 
 coaches = Coach.all

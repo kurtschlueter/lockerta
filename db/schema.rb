@@ -64,10 +64,18 @@ ActiveRecord::Schema.define(version: 20160601153226) do
     t.string   "sport"
     t.string   "gender"
     t.string   "facility_name"
+    t.integer  "facility_capacity"
+    t.string   "gear"
+    t.string   "rivals"
+    t.string   "conference"
+    t.string   "record_last_season"
+    t.integer  "national_titles"
+    t.integer  "conference_titles"
+    t.string   "website"
     t.integer  "school_id"
     t.integer  "coach_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -107,8 +115,10 @@ ActiveRecord::Schema.define(version: 20160601153226) do
   create_table "schools", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
+    t.string   "mascot"
     t.integer  "location_population"
     t.integer  "tuition"
+    t.integer  "enrollment"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

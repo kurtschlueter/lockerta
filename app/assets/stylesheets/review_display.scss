@@ -40,13 +40,41 @@
   box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
   height: 3em;
   vertical-align: middle;
+  cursor: pointer;
 }
 
-.active-coloring.active {
-  background-color: #F67B29;
+.nav-tabs.nav-justified > li > a:hover {
+  background-color: #FEC500;
+  cursor: pointer;
 }
+
+.nav-tabs.nav-justified > li > a, .nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus {
+  border: 0;
+}
+
+.active-coloring.active, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: #F67B29;
+  border: 0;
+  cursor: pointer;
+}
+
 
 .gray-text {
   color: gray;
   font-weight: 600;
+}
+
+.overall-ratings-summary {
+  border: 1px solid gray;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.lil-padding {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.overall-info {
+  margin-top: 2em;
 }
