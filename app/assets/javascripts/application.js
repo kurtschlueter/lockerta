@@ -19,7 +19,8 @@
 //= require search_autocomplete
 //= require link_hover
 //= require ratings_hover
-//= require review_form
+//= require review_form_tabbing
+//= require review_form_program
 
 console.log('app.js')
 $(document).ready(function(){
@@ -27,5 +28,6 @@ $(document).ready(function(){
   autoComplete()
   linkHover()
   ratingsHover()
-  reviewForm()
+  reviewFormTabbing()
+  reviewFormProgram()
 });

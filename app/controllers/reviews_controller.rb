@@ -10,7 +10,8 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    # @article = Article.new
+    @review = Review.new
+    @schools = School.all
   end
 
   def create

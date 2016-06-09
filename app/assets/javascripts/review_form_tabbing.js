@@ -1,4 +1,4 @@
-var reviewForm = function() {
+var reviewFormTabbing = function() {
   console.log('reviewForm function entered')
 
 // TAB 1: ONE BUTTON -> to head coach

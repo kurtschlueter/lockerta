@@ -45,7 +45,7 @@ var linkHover = function() {
         url: '/schools/program_list_in_school',
         type: "GET",
         dataType: "json",
-        data: { input: $(this).html() },
+        data: { school_name: $(this).html() },
         success: function(response){
               $tr.popover({
                   title: 'Which team would you like to view?',

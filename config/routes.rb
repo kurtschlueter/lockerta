@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get :program_list_in_school, :on => :collection
   end
 
+  resources :programs do
+    get :head_coach_of_program, :on => :collection
+  end
+
   resources :articles
   resources :reviews
 
