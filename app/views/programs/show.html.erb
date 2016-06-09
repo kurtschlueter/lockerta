@@ -15,6 +15,7 @@
     </ul>
 
     <div class="tab-content">
+
       <div id="overall" class="tab-pane fade in active row">
         <div class="col-md-5 col-md-offset-1 overall-info">
           <h4><span class="gray-text">School: </span><%= @program.school.name %></h4>
@@ -60,10 +61,66 @@
         </div>
       </div>
 
-      <div id="headcoach" class="tab-pane fade">
-        <h3>Menu 1</h3>
-        <p>Some content in menu 1.</p>
+      <div id="headcoach" class="tab-pane fade row">
+        <div class="col-md-6"></div>
+
+        <div class="col-md-6 text-center">
+          <div class="overall-ratings-summary">
+            <br>
+            <div class='row'>
+              <div class="col-md-5"><h4>Player Development:</h4> </div>
+              <div class="col-md-5">
+                <%= render_stars(@coach.average_player_development) %>
+              </div>
+              <div class="col-md-2">
+                <h4><%= @coach.average_player_development %></h4>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class="col-md-5"><h4>Player Relationships:</h4> </div>
+              <div class="col-md-5">
+                <%= render_stars(@coach.average_player_relationships) %>
+              </div>
+              <div class="col-md-2">
+                <h4><%= @coach.average_player_relationships %></h4>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class="col-md-5"><h4>Pro Connections:</h4> </div>
+              <div class="col-md-5">
+                <%= render_stars(@coach.average_pro_connections) %>
+              </div>
+              <div class="col-md-2">
+                <h4><%= @coach.average_pro_connections %></h4>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class="col-md-5"><h4>Recruiting:</h4> </div>
+              <div class="col-md-5">
+                <%= render_stars(@coach.average_recruiting) %>
+              </div>
+              <div class="col-md-2">
+                <h4><%= @coach.average_recruiting %></h4>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class="col-md-5"><h4>Sport Knowledge:</h4> </div>
+              <div class="col-md-5">
+                <%= render_stars(@coach.average_sport_knowledge) %>
+              </div>
+              <div class="col-md-2">
+                <h4><%= @coach.average_sport_knowledge %></h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
+
       <div id="facilities" class="tab-pane fade">
         <h3>Menu 2</h3>
         <p>Some content in menu 2.</p>
