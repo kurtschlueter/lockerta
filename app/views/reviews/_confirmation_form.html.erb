@@ -1,69 +1,60 @@
 <fieldset id='reviewformconfirmationtab' class='hidden'>
 
-  <legend>Confirmation</legend>
-
-  <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="selectbasic">Select CONFIRMATION</label>
+  <legend>
     <div class="col-md-4">
-      <select name="selectbasic" class="form-control">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-      </select>
+      <img alt="Player Icon" class="top-icon" src="<%= asset_path( 'player_icon.png' ) %>">
+      <h1>Confirmation</h1>
+    </div>
+  </legend>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="textinput">First Name</label>
+    <div class="col-md-4">
+    <input id="textinput" name="textinput" type="text" class="form-control input-md">
     </div>
   </div>
 
-  <!-- Select Basic -->
+  <!-- Text input-->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="selectbasic">Select Program</label>
+    <label class="col-md-4 control-label" for="textinput">Last Name</label>
     <div class="col-md-4">
-      <select name="selectbasic" class="form-control">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-      </select>
+    <input id="textinput" name="textinput" type="text" class="form-control input-md">
     </div>
   </div>
 
-  <!-- Select Basic -->
+  <!-- Text input-->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="selectbasic">Select Head Coach</label>
+    <label class="col-md-4 control-label" for="textinput">Jersey Number</label>
     <div class="col-md-4">
-      <select name="selectbasic" class="form-control">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-      </select>
+    <input id="textinput" name="textinput" type="text" class="form-control input-md">
     </div>
   </div>
 
-  <!-- Select Basic -->
+  <!-- Text input-->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="Select Conference Rival">Select Conference Rival</label>
+    <label class="col-md-4 control-label" for="textinput">Email</label>
     <div class="col-md-4">
-      <select name="Select Conference Rival" class="form-control">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-      </select>
+    <input id="textinput" name="textinput" type="text" class="form-control input-md">
     </div>
   </div>
 
-  <!-- Select Basic -->
+  <!-- Password input-->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="selectbasic">Select Toughest Place to Play</label>
+    <label class="col-md-4 control-label" for="passwordinput">Password</label>
     <div class="col-md-4">
-      <select name="selectbasic" class="form-control">
-        <option value="1">Option one</option>
-        <option value="2">Option two</option>
-      </select>
+      <input id="passwordinput" name="passwordinput" type="password" class="form-control input-md">
+
     </div>
   </div>
 
   <!-- Button -->
   <div class="form-group">
     <label class="col-md-4 control-label" for="singlebutton"></label>
-    <div class="col-md-4">
+    <div class="col-md-1">
       <button id="reviewformbacktoeducation" name="singlebutton" class="btn btn-primary">Education</button>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-1">
       <button id="reviewformsubmit" name="singlebutton" class="btn btn-primary">Submit</button>
     </div>
   </div>
