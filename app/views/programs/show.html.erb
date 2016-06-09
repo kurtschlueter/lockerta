@@ -16,50 +16,7 @@
 
     <div class="tab-content">
 
-      <div id="overall" class="tab-pane fade in active row">
-        <div class="col-md-5 col-md-offset-1 overall-info">
-          <h4><span class="gray-text">School: </span><%= @program.school.name %></h4>
-          <h4><span class="gray-text">Nickname: </span><%= @school.mascot %></h4>
-          <h4><span class="gray-text">Sport: </span><%= @program.sport %></h4>
-          <h4><span class="gray-text">Gear: </span><%= @program.gear %></h4>
-          <h4><span class="gray-text">Rivals: </span><%= @program.rivals %></h4>
-          <h4><span class="gray-text">Conference: </span><%= @program.conference %></h4>
-          <h4><span class="gray-text">Record Last Season: </span><%= @program.record_last_season %></h4>
-          <h4><span class="gray-text">National Titles: </span><%= @program.national_titles %></h4>
-          <h4><span class="gray-text">Conference Titles: </span><%= @program.conference_titles %></h4>
-          <h4><span class="gray-text">Website: </span><a href="<%= @program.website %>"><%= @program.website %></a></h4>
-        </div>
-        <div class="col-md-6 text-center">
-          <h2>Overall Rating:</h2>
-          <div><%= render_stars(@average_rating) %></div>
-          <h3><%= @average_rating %></h3>
-
-          <div class="overall-ratings-summary">
-
-            <h3><span class="pull-left lil-padding">Head Coach: </span><span class="pull-right lil-padding"><%= @coach.average_coach_rating %></span></%></h3>
-            <div>
-              <%= render_stars(@coach.average_coach_rating) %>
-            </div>
-
-            <h3><span class="pull-left lil-padding">Facilities: </span><span class="pull-right lil-padding"><%= @program.average_facility_rating %></span></%></h3>
-            <div>
-              <%= render_stars(@program.average_facility_rating) %>
-            </div>
-
-            <h3><span class="pull-left lil-padding">Location: </span><span class="pull-right lil-padding"><%= @school.average_location_rating %></span></%></h3>
-            <div>
-              <%= render_stars(@school.average_location_rating) %>
-            </div>
-
-            <h3><span class="pull-left lil-padding">Education: </span><span class="pull-right lil-padding"><%= @school.average_education_rating %></span></%></h3>
-            <div>
-              <%= render_stars(@school.average_education_rating) %>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
+      <%= render partial: 'reviews/overall_review_display', locals: {program: @program, average_rating: @average_rating, school: @school, coach: @coach} %>
 
       <div id="headcoach" class="tab-pane fade">
         <div class="row">
