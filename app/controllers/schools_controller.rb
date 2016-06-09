@@ -16,6 +16,7 @@ class SchoolsController < ApplicationController
     puts @school.name
     @programs = @school.programs
     if request.xhr?
+      # see head coach of program method in program controller.
       render :json => {:data => @programs}
     end
   end

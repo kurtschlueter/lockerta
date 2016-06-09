@@ -16,13 +16,19 @@ var reviewFormProgram = function() {
 
         console.log('entered coach')
       }
+
+      if(attr == 'rival') {
+        jsonHTML = jsonHTML + "<option value='" + (ii+2).toString() + "'>" + jsonn.data[ii].first_name + " " + jsonn.data[ii].last_name + "</option>"
+
+        console.log('entered coach')
+      }
     }
     // debugger
     return jsonHTML
   }
 
   // WHEN A SCHOOL IS SELECTED OR NOT
-  $( "#review_program_select_school_dropdown" ).change(function() {
+  $( document ).on('change', "#review_program_select_school_dropdown", function() {
     var school_dpdown_val = $( "#review_program_select_school_dropdown" ).val();
     var school_dpdown_text = $( "#review_program_select_school_dropdown option:selected").text()
 
@@ -53,7 +59,10 @@ var reviewFormProgram = function() {
   });
 
   // WHEN A PROGRAM IS SELECTED OR NOT
-  $( "#review_program_select_program_dropdown" ).change(function() {
+  $( document ).on('change', "#review_program_select_program_dropdown", function() {
+
+
+    console.log('program change')
     var program_dpdown_val = $( "#review_program_select_program_dropdown" ).val();
     var program_dpdown_text = $( "#review_program_select_program_dropdown option:selected").text()
     var school_dpdown_text = $( "#review_program_select_school_dropdown option:selected").text()

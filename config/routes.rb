@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :programs do
     get :head_coach_of_program, :on => :collection
+    get :rivals_of_program, :on => :collection
   end
 
   resources :articles
