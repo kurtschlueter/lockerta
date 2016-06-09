@@ -1,0 +1,33 @@
+<div class="container review-show-container">
+
+  <% if @program %>
+
+    <strong><h2 class="pull-left school-name"><%= @program.school.name %></h2></strong>
+    <a href="#" class="pull-right write-review-display">Write Review</a>
+    <h2 class="pull-left sport-name"><%= @program.sport %></h2>
+
+    <ul class="nav nav-tabs nav-justified clear-review-header">
+      <li class="text-center active-coloring active" data-toggle="tab"><a href="#overall" id="no-border">Overall</a></li>
+      <li class="text-center active-coloring" data-toggle="tab"><a href='#headcoach'>Head Coach</a></li>
+      <li class="text-center active-coloring" data-toggle="tab"><a href="#facilities" >Facilities</a></li>
+      <li class="text-center active-coloring" data-toggle="tab"><a href="#location">Location</a></li>
+      <li class="text-center active-coloring" data-toggle="tab"><a href="#education">Education</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+      <%= render partial: 'reviews/overall_review_display', locals: {program: @program, average_rating: @average_rating, school: @school, coach: @coach} %>
+
+      <%= render partial: 'coaches/coach_review_display', locals: {school: @school, coach: @coach} %>
+
+      <%= render partial: 'programs/facility_review_display', locals: {school: @school, coach: @coach, program: @program} %>
+
+    </div>
+
+  <% else %>
+
+    <h2 class="text-center">We couldn't find the program you were looking for. Please try again.</h2>
+
+  <% end %>
+
+</div>
