@@ -6,6 +6,42 @@
     <a href="#" class="pull-right write-review-display">Write Review</a>
     <h2 class="pull-left sport-name"><%= @program.sport %></h2>
 
+    <ul class="nav nav-tabs nav-justified clear-review-header">
+      <li class="text-center active-coloring active" data-toggle="tab" href='#overall'>Overall</li>
+      <li class="text-center active-coloring" data-toggle="tab" href='#headcoach'>Head Coach</li>
+      <li class="text-center active-coloring" data-toggle="tab" href='#facilities'>Facilities</li>
+      <li class="text-center active-coloring" data-toggle="tab" href='#location'>Location</li>
+      <li class="text-center active-coloring" data-toggle="tab" href='#education'>Education</li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="overall" class="tab-pane fade in active row">
+        <div class="col-md-6">
+          <h4><span class="gray-text">School: </span><%= @program.school.name %></h4>
+          <h4><span class="gray-text">Nickname: </span><%= @program.school.name %></h4>
+          <h4><span class="gray-text">Sport: </span><%= @program.sport %></h4>
+          <h4><span class="gray-text">Gear: </span><%= @program.sport %></h4>
+          <h4><span class="gray-text">Rivals: </span><%= @program.sport %></h4>
+          <h4><span class="gray-text">Conference: </span><%= @program.sport %></h4>
+          <h4><span class="gray-text">Record Last Season: </span><%= @program.sport %></h4>
+          <h4><span class="gray-text">National Titles: </span><%= @program.sport %></h4>
+          <h4><span class="gray-text">Website: </span><a href="<%= @program.sport %>"><%= @program.sport %></a></h4>
+        </div>
+        <div class="col-md-6">
+          <h2>Overall Rating:</h2>
+          <div><%= render_stars((@program.average_facility_rating + @school.average_location_rating + @school.average_education_rating + @coach.average_coach_rating)/4) %></div>
+        </div>
+      </div>
+      <div id="headcoach" class="tab-pane fade">
+        <h3>Menu 1</h3>
+        <p>Some content in menu 1.</p>
+      </div>
+      <div id="facilities" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p>Some content in menu 2.</p>
+      </div>
+    </div>
+
   <% else %>
 
     <h2 class="text-center">We couldn't find the program you were looking for. Please try again.</h2>

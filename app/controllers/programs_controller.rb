@@ -2,7 +2,10 @@ class ProgramsController < ApplicationController
 
   def show
     @program = Program.find_by_id(params[:id])
-    puts @program
+    if @program
+      @school = @program.school
+      @coach = @program.coach
+    end
   end
 
 end
