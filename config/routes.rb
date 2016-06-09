@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :articles
   resources :reviews
 
+  resources :programs
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

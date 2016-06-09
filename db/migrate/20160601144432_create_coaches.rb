@@ -9,6 +9,7 @@ class CreateCoaches < ActiveRecord::Migration
       t.integer :wins
       t.integer :losses
       t.integer :year_started
+      t.integer :seasons
       t.integer :ncaa_appearances
       t.integer :conference_titles
       t.string :recruiting_state1

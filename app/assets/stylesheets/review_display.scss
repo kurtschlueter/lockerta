@@ -1,0 +1,96 @@
+.review-show-container {
+  margin-top: 120px;
+  background-color: #f6f6f6;
+  color: black;
+  position: relative;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.sport-name, .clear-review-header {
+  margin-top: 0;
+  clear: both;
+}
+
+.sport-name, .school-name {
+  padding-left: 20px;
+}
+
+.school-name {
+  font-weight:600;
+}
+
+.write-review-display {
+  background-color: #F67B29;
+  color: #FFFFFF;
+  position:absolute;
+  top: 2em;
+  right: 5em;
+  padding:1em 4em;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+}
+
+.active-coloring {
+  background-color: #FEC500;
+  color: white;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  height: 3em;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.nav-tabs.nav-justified > li > a:hover {
+  background-color: #FEC500;
+  cursor: pointer;
+}
+
+.nav-tabs.nav-justified > li > a, .nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:focus {
+  border: 0;
+}
+
+.active-coloring.active, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: #F67B29;
+  border: 0;
+  cursor: pointer;
+}
+
+
+.gray-text {
+  color: gray;
+  font-weight: 600;
+}
+
+.overall-ratings-summary {
+  border: 1px solid gray;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.lil-padding {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.overall-info {
+  margin-top: 2em;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.each-coach-review {
+  border-top: 1px solid #FFE080;
+}
+
+.clear {
+  clear: both;
+}
+
+.margin-top-3 {
+  margin-top: 3em;
+}
