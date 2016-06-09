@@ -1,0 +1,101 @@
+<div id="facilities" class="tab-pane fade">
+  <div class="row">
+    <div class="col-md-6 margin-top-3">
+      <div class="row">
+        <div class="col-md-5">
+        <img alt="Facility Icon" class="img-responsive" src="<%= asset_path( 'facility_icon.png' ) %>">
+        </div>
+        <div class="col-md-7">
+          <h2>Facilities</h2>
+          <h3><%= render_stars(program.average_facility_rating) %> <span class="lil-padding"><%= program.average_facility_rating %></span></h3>
+          <h4>Main Arena/Stadium: <%= program.facility_name %></h4>
+          <h4>Alma Mater: <%= program.facility_capacity %></h4>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6 text-center overall-info">
+      <div class="overall-ratings-summary">
+        <br>
+        <div class='row'>
+          <div class="col-md-5"><h4>Main Arena:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(program.average_main_arena) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= program.average_main_arena %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Home Game Atmosphere:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(program.average_home_atmosphere) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= program.average_home_atmosphere %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Weight Room:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(program.average_weight_room) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= program.average_weight_room %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Locker Room:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(program.average_locker_room) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= program.average_locker_room %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Training Facility:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(program.average_training_facility) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= program.average_training_facility %></h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+        <h2 class="underline clear">Overview</h2>
+        <p>
+          The <%= program.sport %> team plays their home games at the <%= program.facility_name %>. This facility was built in <%= program.facility_built %> and holds up to <%= program.facility_capacity %> spectators.  Players feel the home game atmosphere is <%= program.home_atmosphere %>, with average attendance totaling <%= program.average_attendance %> spectators. The top rated element of the facility is their <%= program.facility_strong_point %>, with the <%= program.facility_weak_point %> needing improvement. Overall, the facilities for this program are <%= program.facility_overall_ranking %>.
+        </p>
+      </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="underline clear-review-header">Comments</h2>
+
+      <% program.reviews.each do |review| %>
+      <div class="col-md-12 each-coach-review">
+        <div class="col-md-3 text-center">
+          <h3><%= render_stars(review.average_facility_rating) %></h3>
+          <h3><%= review.average_facility_rating %></h3>
+        </div>
+        <div class="col-md-9">
+          <h4>"<%= review.f_comments %>"</h4>
+        </div>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
