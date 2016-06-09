@@ -62,9 +62,27 @@
       </div>
 
       <div id="headcoach" class="tab-pane fade row">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-4">
+              <img alt="Coach Icon" class="top-icon" src="<%= asset_path( 'coach_icon.png' ) %>">
+            </div>
+            <div class="col-md-7 col-md-offset-1">
+              <h2><%= @coach.first_name + ' ' + @coach.last_name %></h2>
+              <h3><%= render_stars(@coach.average_coach_rating) %> <span class="lil-padding"><%= @coach.average_coach_rating %></span></h3>
+              <h4>Overall Record: <%= @coach.wins %>-<%= @coach.losses %></h4>
+              <h4>Alma Mater: <%= @coach.alma_mater %></h4>
+            </div>
+          </div>
+          <div class="container">
+            <h2 class="underline">Overview</h2>
+            <p>
+              <%= @coach.first_name + ' ' + @coach.last_name %> has been the Head Coach at <%= @school.name %> since <%= @coach.year_started %>, posting a <%= @coach.win_percentage %>% win percentage in <%= @coach.seasons %> seasons. During <%= @coach.his %> tenure, <%= @coach.last_name %> has led <%= @school.name %> to <%= @coach.ncaa_appearances %> NCAA tournament appearances, and <%= @coach.conference_titles %> Conference Championships. Coach <%= @coach.last_name %> heavily recruits players from <%= @coach.recruiting_state1 + ', ' + @coach.recruiting_state2 + ', and ' + @coach.recruiting_state3 %>. Players feel <%= @coach.he %> specializes in <%= @coach.his %> <%= @coach.strong_point %>, but can improve in <%= @coach.his + ' ' + @coach.weak_point %>. <%= @coach.would_play_again_percent %>% of players would return to play another season for Coach <%= @coach.last_name %>.
+            </p>
+          </div>
+        </div>
 
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 text-center overall-info">
           <div class="overall-ratings-summary">
             <br>
             <div class='row'>

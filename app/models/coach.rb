@@ -42,6 +42,30 @@ class Coach < ActiveRecord::Base
     self.all.sort_by(&:average_coach_rating).reverse[0..4]
   end
 
+  def win_percentage
+    (wins/(wins + losses.to_f) * 100).round
+  end
+
+  def skill_rankings
+    object = [{score: average_sport_knowledge, language: 'knowledge of the sport'}, {score: average_pro_connections, language: 'professional connections'}, {score: average_player_development, language: 'development of players'}, {score: average_player_relationships, language: 'development of relationships with players'}, {score: average_recruiting, language: 'recruiting' }].sort!{|a,b| a[:score] <=> b[:score]}
+  end
+
+  def weak_point
+    skill_rankings[0][:language]
+  end
+
+  def strong_point
+    skill_rankings.last[:language]
+  end
+
+  def his
+    gender == 'male' ? 'his' : 'her'
+  end
+
+  def he
+    gender == 'male' ? 'he' : 'she'
+  end
+
   def comments
     reviews.map { |review| review.hc_comments}
   end

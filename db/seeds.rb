@@ -100,7 +100,7 @@ articles_for_seeding = [
 Article.create!(articles_for_seeding)
 
 coaches = 50.times.map do
-  Coach.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, alma_mater: ["University of Notre Dame", 'University of West Florida', 'Duke University'].sample, gender: ['male', 'female'].sample, wins: rand(1..50), losses: rand(1..50), year_started: [2001, 2005, 1977].sample, ncaa_appearances: rand(0..10), conference_titles: rand(0..5), recruiting_state1: 'Illinois', recruiting_state2: 'Florida', recruiting_state3: 'Georgia')
+  Coach.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, alma_mater: ["University of Notre Dame", 'University of West Florida', 'Duke University'].sample, gender: ['male', 'female'].sample, wins: rand(1..50), losses: rand(1..50), year_started: [2001, 2005, 1977].sample, ncaa_appearances: rand(0..10), conference_titles: rand(0..5), recruiting_state1: 'Illinois', recruiting_state2: 'Florida', recruiting_state3: 'Georgia', seasons: rand(1..5))
 end
 
 schools.each do |school|
