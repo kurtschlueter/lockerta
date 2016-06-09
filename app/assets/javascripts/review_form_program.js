@@ -1,6 +1,45 @@
 var reviewFormProgram = function() {
   console.log('reviewFormProgram function entered')
 
+  var reviewToSubmit = {
+
+    user: '',
+    coach: '',
+    school: '',
+    program: '',
+
+    hc_player_relationships: '',
+    hc_player_development: '',
+    hc_recruiting: '',
+    hc_pro_connections: '',
+    hc_sport_knowledge: '',
+    hc_would_play_with_again: '',
+    hc_comments: '',
+
+    f_main_arena: '',
+    f_home_atmosphere: '',
+    f_weight_room: '',
+    f_locker_room: '',
+    f_training_facility: '',
+    f_comments: '',
+
+    l_program_tradition: '',
+    l_community_interest: '',
+    l_weather: '',
+    l_nightlife: '',
+    l_comments: '',
+
+    e_school_difficulty: '',
+    e_academic_support: '',
+    e_school_reputation: '',
+    e_graduated: '',
+    e_comments: '',
+
+    conference_rival: '',
+    toughest_conference_place_to_play: ''
+
+  };
+
   var jsonToHTMLselectOptions = function(jsonn, attr) {
     console.log('entered jsontohtmlselectoptions func')
     var jsonHTML = ''
@@ -12,12 +51,6 @@ var reviewFormProgram = function() {
         console.log('entered program')
       }
       if(attr == 'coach') {
-        jsonHTML = jsonHTML + "<option value='" + (ii+2).toString() + "'>" + jsonn.data[ii].first_name + " " + jsonn.data[ii].last_name + "</option>"
-
-        console.log('entered coach')
-      }
-
-      if(attr == 'rival') {
         jsonHTML = jsonHTML + "<option value='" + (ii+2).toString() + "'>" + jsonn.data[ii].first_name + " " + jsonn.data[ii].last_name + "</option>"
 
         console.log('entered coach')
