@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
 //= require search_autocomplete
 //= require link_hover
 //= require ratings_hover
