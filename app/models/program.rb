@@ -7,32 +7,56 @@ class Program < ActiveRecord::Base
   validates :sport, :school_id, :coach_id, :facility_name, presence: true
 
   def average_main_arena
-    array = reviews.map {|review| review.f_main_arena.to_f }
+    if reviews.length > 0
+      array = reviews.map {|review| review.f_main_arena.to_f }
     (array.reduce(:+)/array.length.to_f).round(1)
+    else
+      'Not Rated'
+    end
   end
 
   def average_home_atmosphere
-    array = reviews.map {|review| review.f_home_atmosphere.to_f }
+    if reviews.length > 0
+      array = reviews.map {|review| review.f_home_atmosphere.to_f }
     (array.reduce(:+)/array.length.to_f).round(1)
+    else
+      'Not Rated'
+    end
   end
 
   def average_weight_room
-    array = reviews.map {|review| review.f_weight_room.to_f }
+    if reviews.length > 0
+      array = reviews.map {|review| review.f_weight_room.to_f }
     (array.reduce(:+)/array.length.to_f).round(1)
+    else
+      'Not Rated'
+    end
   end
 
   def average_locker_room
-    array = reviews.map {|review| review.f_locker_room.to_f }
+    if reviews.length > 0
+      array = reviews.map {|review| review.f_locker_room.to_f }
     (array.reduce(:+)/array.length.to_f).round(1)
+    else
+      'Not Rated'
+    end
   end
 
   def average_training_facility
-    array = reviews.map {|review| review.f_training_facility.to_f }
+    if reviews.length > 0
+      array = reviews.map {|review| review.f_training_facility.to_f }
     (array.reduce(:+)/array.length.to_f).round(1)
+    else
+      'Not Rated'
+    end
   end
 
   def average_facility_rating
-    ((average_main_arena + average_home_atmosphere + average_weight_room + average_locker_room + average_training_facility)/5).round(1)
+    if reviews.length > 0
+      ((average_main_arena + average_home_atmosphere + average_weight_room + average_locker_room + average_training_facility)/5).round(1)
+    else
+      'Not Rated'
+    end
   end
 
   def facility_rankings
@@ -52,11 +76,13 @@ class Program < ActiveRecord::Base
   end
 
   def all_facilities_average
-    Program.all.map(&:average_facility_rating).reduce(&:+)/Program.all.count
+      Program.all.select{|program| program.average_facility_rating.is_a?(Float)}.map(&:average_facility_rating).reduce(&:+)/Program.all.count
   end
 
   def facility_overall_ranking
-    if average_facility_rating > all_facilities_average
+    if average_facility_rating.is_a?(String)
+      'average'
+    elsif average_facility_rating > all_facilities_average
       'above average'
     elsif all_facilities_average > average_facility_rating
       'below average'
