@@ -94,4 +94,21 @@ class Program < ActiveRecord::Base
   def self.top_five_facilities
     self.all.sort_by(&:average_facility_rating).reverse[0..4]
   end
+
+  def graduated_percent
+    if reviews.length > 0
+      array = reviews.map { |review| review.e_graduated}
+      (array.select{|item| item }.length.to_f/array.length * 100).to_i
+    else
+      'unknown'
+    end
+  end
+
+  def graduated_comparison
+    if graduated_percent.is_a?(Integer)
+      graduated_percent >= 73 ? 'above average' : 'below average'
+    else
+      'unknown'
+    end
+  end
 end

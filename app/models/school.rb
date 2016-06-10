@@ -77,6 +77,16 @@ class School < ActiveRecord::Base
     (array.reduce(:+)/array.length.to_f).round(1)
   end
 
+  def difficulty_language
+    if average_e_school_difficulty >= 3.75
+      'very challenging'
+    elsif average_e_school_difficulty <= 2.25
+      'not very challenging'
+    else
+      'average'
+    end
+  end
+
   def average_e_academic_support
     array = reviews.map {|review| review.e_academic_support.to_f }
     (array.reduce(:+)/array.length.to_f).round(1)
@@ -98,6 +108,26 @@ class School < ActiveRecord::Base
   def graduated_percent
     array = reviews.map { |review| review.e_graduated}
     (array.select{|item| item }.length.to_f/array.length * 100).to_i
+  end
+
+  def graduated_comparison
+    graduated_percent >= 73 ? 'above average' : 'below average'
+  end
+
+  def all_educations_average
+      School.all.select{|school| school.average_education_rating.is_a?(Float)}.map(&:average_education_rating).reduce(&:+)/School.all.count
+  end
+
+  def education_overall_ranking
+    if average_education_rating.is_a?(String)
+      'average'
+    elsif average_education_rating > all_educations_average
+      'above average'
+    elsif all_educations_average > average_education_rating
+      'below average'
+    else
+      'average'
+    end
   end
 
   def education_comments

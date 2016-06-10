@@ -17,4 +17,8 @@ class Review < ActiveRecord::Base
   def average_location_rating
     ((l_program_tradition.to_f + l_community_interest + l_weather + l_nightlife)/4).round(1)
   end
+
+  def average_education_rating
+    ((e_academic_support.to_f + e_school_reputation + e_school_difficulty)/3).round(1)
+  end
 end
