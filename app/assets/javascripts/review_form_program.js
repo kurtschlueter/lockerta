@@ -1,12 +1,9 @@
-var reviewFormProgram = function() {
-  console.log('reviewFormProgram function entered')
-
   var reviewToSubmit = {
 
     user: '',
-    coach: '',
-    school: '',
-    program: '',
+    coach_id: '',
+    school_id: '',
+    program_id: '',
 
     hc_player_relationships: '',
     hc_player_development: '',
@@ -40,6 +37,9 @@ var reviewFormProgram = function() {
 
   };
 
+var reviewFormProgram = function() {
+  console.log('reviewFormProgram function entered')
+
   var jsonToHTMLselectOptions = function(jsonn, attr) {
     console.log('entered jsontohtmlselectoptions func')
     var jsonHTML = ''
@@ -62,8 +62,13 @@ var reviewFormProgram = function() {
 
   // WHEN A SCHOOL IS SELECTED OR NOT
   $( document ).on('change', "#review_program_select_school_dropdown", function() {
+
+    reviewToSubmit.school_id = '';
+    reviewToSubmit.program_id = '';
+    reviewToSubmit.coach_id = '';
+
     var school_dpdown_val = $( "#review_program_select_school_dropdown" ).val();
-    var school_dpdown_text = $( "#review_program_select_school_dropdown option:selected").text()
+    var school_dpdown_text = $( "#review_program_select_school_dropdown option:selected").text();
 
     if (school_dpdown_val != 1) {
       $("#review_program_select_program_div").removeClass('hidden')
@@ -77,6 +82,10 @@ var reviewFormProgram = function() {
         dataType: "json",
         data: { school_name: school_dpdown_text },
         success: function(response){
+
+          //OK I either have to convert this to html in another js file or just send it back as html from server. Right now its getting waaaay to sloppy.
+
+          reviewToSubmit.school_id = response.data[0].school_id
           $("#review_program_select_program_dropdown").html('')
           $("#review_program_select_program_dropdown").append("<option value='1'> Select Program </option>")
           $("#review_program_select_program_dropdown").append(jsonToHTMLselectOptions(response, 'program'))
@@ -94,8 +103,9 @@ var reviewFormProgram = function() {
   // WHEN A PROGRAM IS SELECTED OR NOT
   $( document ).on('change', "#review_program_select_program_dropdown", function() {
 
+    reviewToSubmit.program_id = ''
+    reviewToSubmit.coach_id = ''
 
-    console.log('program change')
     var program_dpdown_val = $( "#review_program_select_program_dropdown" ).val();
     var program_dpdown_text = $( "#review_program_select_program_dropdown option:selected").text()
     var school_dpdown_text = $( "#review_program_select_school_dropdown option:selected").text()
@@ -111,7 +121,7 @@ var reviewFormProgram = function() {
         dataType: "json",
         data: { school_name: school_dpdown_text, program_sport:  program_dpdown_text},
         success: function(response){
-          // debugger
+          debugger
           $("#review_program_select_headcoach_dropdown").html('')
           $("#review_program_select_headcoach_dropdown").append("<option value='1'> Select Coach </option>")
           $("#review_program_select_headcoach_dropdown").append(jsonToHTMLselectOptions(response, 'coach'))
