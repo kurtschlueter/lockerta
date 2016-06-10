@@ -35,7 +35,7 @@ class Coach < ActiveRecord::Base
   end
 
   def average_coach_rating
-    ((average_player_development + average_player_relationships + average_recruiting + average_pro_connections + average_sport_knowledge)/5).round(1)
+    ((average_player_development.to_f + average_player_relationships + average_recruiting + average_pro_connections + average_sport_knowledge)/5).round(1)
   end
 
   def self.top_five_coaches

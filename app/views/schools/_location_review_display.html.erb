@@ -1,0 +1,90 @@
+<div id="location" class="tab-pane fade">
+  <div class="row">
+    <div class="col-md-6 margin-top-3">
+      <div class="row">
+        <div class="col-md-5">
+        <img alt="location Icon" class="img-responsive" src="<%= asset_path( 'location_icon.png' ) %>">
+        </div>
+        <div class="col-md-7">
+          <h2><%= school.location %></h2>
+          <h3><%= render_stars(school.average_location_rating) %> <span class="lil-padding"><%= school.average_location_rating %></span></h3>
+          <h4>City Population: <%= school.location_population %></h4>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6 text-center overall-info">
+      <div class="overall-ratings-summary">
+        <br>
+        <div class='row'>
+          <div class="col-md-5"><h4>Program Tradition:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(school.average_l_program_tradition) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= school.average_l_program_tradition %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Community Interest:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(school.average_l_community_interest) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= school.average_l_community_interest %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Weather:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(school.average_l_weather) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= school.average_l_weather %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Nightlife:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(school.average_l_nightlife) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= school.average_l_nightlife %></h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+        <h2 class="underline clear">Overview</h2>
+        <p>
+          <%= school.location %> is a town with a population of <%= school.location_population %>. The <%= program.sport %> players graded the <%= school.location_strong_point %> as the best feature of the city and stated that the <%= school.location_weak_point %> could be improved. The overall location of this program is rated <%= school.location_overall_ranking %>.
+        </p>
+      </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="underline clear-review-header">Comments</h2>
+
+      <% school.reviews.each do |review| %>
+      <div class="col-md-12 each-coach-review">
+        <div class="col-md-3 text-center">
+          <h3><%= render_stars(review.average_location_rating) %></h3>
+          <h3><%= review.average_location_rating %></h3>
+        </div>
+        <div class="col-md-9">
+          <h4>"<%= review.l_comments %>"</h4>
+        </div>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
