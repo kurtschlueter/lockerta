@@ -1,4 +1,5 @@
 <div id="overall" class="tab-pane fade in active row">
+  <% if has_reviews?(program) %>
         <div class="col-md-5 col-md-offset-1 overall-info">
           <h4><span class="gray-text">School: </span><%= program.school.name %></h4>
           <h4><span class="gray-text">Nickname: </span><%= school.mascot %></h4>
@@ -11,6 +12,18 @@
           <h4><span class="gray-text">Conference Titles: </span><%= program.conference_titles %></h4>
           <h4><span class="gray-text">Website: </span><a href="<%= program.website %>"><%= program.website %></a></h4>
         </div>
+
+
+      <% else %>
+        <div class="col-md-6 text-center margin-top-3">
+          <h2>This Team has not been rated yet!</h2>
+          <h3>Submit your review and see what’s been said about you!</h3>
+          <a href="#" class="write-review-link-unreviewed">Write Review</a>
+          <h4 class="gray-text">Receive report on your athletic career after submitting your review</h4>
+        </div>
+
+      <% end %>
+
         <div class="col-md-6 text-center">
           <h2>Overall Rating:</h2>
           <div><%= render_stars(average_rating) %></div>
@@ -18,27 +31,30 @@
 
           <div class="overall-ratings-summary">
 
-            <h3><span class="pull-left lil-padding">Head Coach: </span><span class="pull-right lil-padding"><%= coach.average_coach_rating %></span></%></h3>
+            <h3><span class="pull-left lil-padding">Head Coach: </span><span class="pull-right lil-padding"><%= has_reviews?(program) ? coach.average_coach_rating : 'Not Rated' %></span></h3>
             <div>
-              <%= render_stars(coach.average_coach_rating) %>
+              <%= has_reviews?(program) ? render_stars(coach.average_coach_rating) : render_stars(0) %>
             </div>
 
-            <h3><span class="pull-left lil-padding">Facilities: </span><span class="pull-right lil-padding"><%= program.average_facility_rating %></span></%></h3>
+            <h3><span class="pull-left lil-padding">Facilities: </span><span class="pull-right lil-padding"><%= program.average_facility_rating %></span></h3>
             <div>
               <%= render_stars(program.average_facility_rating) %>
             </div>
 
-            <h3><span class="pull-left lil-padding">Location: </span><span class="pull-right lil-padding"><%= school.average_location_rating %></span></%></h3>
+            <h3><span class="pull-left lil-padding">Location: </span><span class="pull-right lil-padding"><%= has_reviews?(program) ? school.average_location_rating : 'Not Rated' %></span></h3>
             <div>
-              <%= render_stars(school.average_location_rating) %>
+              <%= has_reviews?(program) ? render_stars(school.average_location_rating) : render_stars(0) %>
             </div>
 
-            <h3><span class="pull-left lil-padding">Education: </span><span class="pull-right lil-padding"><%= school.average_education_rating %></span></%></h3>
+            <h3><span class="pull-left lil-padding">Education: </span><span class="pull-right lil-padding"><%= has_reviews?(program) ? school.average_education_rating : 'Not Rated' %></span></h3>
             <div>
-              <%= render_stars(school.average_education_rating) %>
+              <%= has_reviews?(program) ? render_stars(school.average_education_rating) : render_stars(0) %>
             </div>
 
           </div>
 
         </div>
+
+
+
       </div>

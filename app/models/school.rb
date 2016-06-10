@@ -33,7 +33,35 @@ class School < ActiveRecord::Base
   end
 
   def average_location_rating
-    ((average_l_program_tradition + average_l_community_interest + average_l_weather + average_l_nightlife)/4).round(1)
+    ((average_l_program_tradition.to_f + average_l_community_interest + average_l_weather + average_l_nightlife)/4).round(1)
+  end
+
+  def location_skill_rankings
+    object = [{score: average_l_program_tradition, language: 'program tradition'}, {score: average_l_community_interest, language: 'community interest'}, {score: average_l_weather, language: 'weather'}, {score: average_l_nightlife, language: 'nightlife'}].sort!{|a,b| a[:score] <=> b[:score]}
+  end
+
+  def location_weak_point
+    location_skill_rankings[0][:language]
+  end
+
+  def location_strong_point
+    location_skill_rankings.last[:language]
+  end
+
+  def all_locations_average
+      School.all.select{|school| school.average_location_rating.is_a?(Float)}.map(&:average_location_rating).reduce(&:+)/School.all.count
+  end
+
+  def location_overall_ranking
+    if average_location_rating.is_a?(String)
+      'average'
+    elsif average_location_rating > all_locations_average
+      'above average'
+    elsif all_locations_average > average_location_rating
+      'below average'
+    else
+      'average'
+    end
   end
 
   def self.top_five_locations
@@ -49,6 +77,16 @@ class School < ActiveRecord::Base
     (array.reduce(:+)/array.length.to_f).round(1)
   end
 
+  def difficulty_language
+    if average_e_school_difficulty >= 3.75
+      'very challenging'
+    elsif average_e_school_difficulty <= 2.25
+      'not very challenging'
+    else
+      'average'
+    end
+  end
+
   def average_e_academic_support
     array = reviews.map {|review| review.e_academic_support.to_f }
     (array.reduce(:+)/array.length.to_f).round(1)
@@ -60,7 +98,7 @@ class School < ActiveRecord::Base
   end
 
   def average_education_rating
-    ((average_e_school_difficulty + average_e_academic_support + average_e_school_reputation)/3).round(1)
+    ((average_e_school_difficulty.to_f + average_e_academic_support + average_e_school_reputation)/3).round(1)
   end
 
   def self.top_five_educations
@@ -70,6 +108,26 @@ class School < ActiveRecord::Base
   def graduated_percent
     array = reviews.map { |review| review.e_graduated}
     (array.select{|item| item }.length.to_f/array.length * 100).to_i
+  end
+
+  def graduated_comparison
+    graduated_percent >= 73 ? 'above average' : 'below average'
+  end
+
+  def all_educations_average
+      School.all.select{|school| school.average_education_rating.is_a?(Float)}.map(&:average_education_rating).reduce(&:+)/School.all.count
+  end
+
+  def education_overall_ranking
+    if average_education_rating.is_a?(String)
+      'average'
+    elsif average_education_rating > all_educations_average
+      'above average'
+    elsif all_educations_average > average_education_rating
+      'below average'
+    else
+      'average'
+    end
   end
 
   def education_comments

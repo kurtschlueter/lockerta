@@ -1,0 +1,81 @@
+<div id="education" class="tab-pane fade">
+  <div class="row">
+    <div class="col-md-6 margin-top-3">
+      <div class="row">
+        <div class="col-md-5">
+        <img alt="Education Icon" class="img-responsive" src="<%= asset_path( 'education_icon.png' ) %>">
+        </div>
+        <div class="col-md-7">
+          <h2>Education</h2>
+          <h3><%= render_stars(school.average_education_rating) %> <span class="lil-padding"><%= school.average_education_rating %></span></h3>
+          <h4>Enrollment: <%= school.enrollment %></h4>
+          <h4>Tuition Cost: <%= school.tuition %></h4>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-6 text-center overall-info">
+      <div class="overall-ratings-summary">
+        <br>
+        <div class='row'>
+          <div class="col-md-5"><h4>School Difficulty:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(school.average_e_school_difficulty) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= school.average_e_school_difficulty %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>Academic Support:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(school.average_e_academic_support) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= school.average_e_academic_support %></h4>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-5"><h4>School Reputation:</h4> </div>
+          <div class="col-md-5">
+            <%= render_stars(school.average_e_school_reputation) %>
+          </div>
+          <div class="col-md-2">
+            <h4><%= school.average_e_school_reputation %></h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+        <h2 class="underline clear">Overview</h2>
+        <p>
+          <%= school.name %> is a <%= school.public_or_private %> school with <%= school.percentage_male %>% male and <%= 100 - school.percentage_male %>% female students. The Men’s Basketball program graduates <%= program.graduated_percent %>% of their players which is <%= program.graduated_comparison %> for college athletic programs. Players feel the school provides <%= school.education_overall_ranking %> academic support and have listed the academic curriculum as <%= school.difficulty_language %>.
+        </p>
+      </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="underline clear-review-header">Comments</h2>
+
+      <% school.reviews.each do |review| %>
+      <div class="col-md-12 each-coach-review">
+        <div class="col-md-3 text-center">
+          <h3><%= render_stars(review.average_education_rating) %></h3>
+          <h3><%= review.average_education_rating %></h3>
+        </div>
+        <div class="col-md-9">
+          <h4>"<%= review.e_comments %>"</h4>
+        </div>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

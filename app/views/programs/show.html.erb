@@ -22,6 +22,10 @@
 
       <%= render partial: 'programs/facility_review_display', locals: {school: @school, coach: @coach, program: @program} %>
 
+      <%= render partial: 'schools/location_review_display', locals: {school: @school, coach: @coach, program: @program} %>
+
+      <%= render partial: 'schools/education_review_display', locals: {school: @school, coach: @coach, program: @program} %>
+
     </div>
 
   <% else %>
