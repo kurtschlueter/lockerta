@@ -53,7 +53,7 @@ class Program < ActiveRecord::Base
 
   def average_facility_rating
     if reviews.length > 0
-      ((average_main_arena + average_home_atmosphere + average_weight_room + average_locker_room + average_training_facility)/5).round(1)
+      ((average_main_arena.to_f + average_home_atmosphere + average_weight_room + average_locker_room + average_training_facility)/5).round(1)
     else
       'Not Rated'
     end

@@ -4,6 +4,8 @@ class CreateSchools < ActiveRecord::Migration
       t.string :name
       t.string :location
       t.string :mascot
+      t.string :public_or_private
+      t.integer :percentage_male
       t.integer :location_population
       t.integer :tuition
       t.integer :enrollment

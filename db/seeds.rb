@@ -8,15 +8,15 @@ User.destroy_all
 
 schools_for_seeding = [
   {name: 'University of West Florida',
-    location: 'Pensacola, FL', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
+    location: 'Pensacola, FL', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000), public_or_private: ['public', 'private'].sample, percentage_male: rand(30..80)},
   {name: 'Christian Brothers University',
-    location: 'Memphis, TN', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
+    location: 'Memphis, TN', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000), public_or_private: ['public', 'private'].sample, percentage_male: rand(30..80)},
   {name: 'Delta State University',
-    location: 'Cleveland, MS' , tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
+    location: 'Cleveland, MS' , tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000), public_or_private: ['public', 'private'].sample, percentage_male: rand(30..80)},
   {name: 'Lee University',
-    location: 'Cleveland, TN', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)},
+    location: 'Cleveland, TN', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000), public_or_private: ['public', 'private'].sample, percentage_male: rand(30..80)},
   {name: 'Mississippi College',
-    location: 'Clinton, MS', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000)}
+    location: 'Clinton, MS', tuition: rand(14358..34594), location_population: rand(14358..34594), mascot: 'Argonauts', enrollment: rand(5000..15000), public_or_private: ['public', 'private'].sample, percentage_male: rand(30..80)}
 ]
 
 School.create!(schools_for_seeding)
