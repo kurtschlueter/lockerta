@@ -18,7 +18,7 @@
 
       <%= render partial: 'reviews/overall_review_display', locals: {program: @program, average_rating: @average_rating, school: @school, coach: @coach} %>
 
-      <%= render partial: 'coaches/coach_review_display', locals: {school: @school, coach: @coach} %>
+      <%= render partial: 'coaches/coach_review_display', locals: {school: @school, coach: @coach, program: @program} %>
 
       <%= render partial: 'programs/facility_review_display', locals: {school: @school, coach: @coach, program: @program} %>
 

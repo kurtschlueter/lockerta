@@ -1,5 +1,8 @@
 <div id="facilities" class="tab-pane fade">
+
   <div class="row">
+<% if has_reviews?(program) %>
+
     <div class="col-md-6 margin-top-3">
       <div class="row">
         <div class="col-md-5">
@@ -14,6 +17,16 @@
       </div>
 
     </div>
+
+  <% else %>
+        <div class="col-md-6 text-center margin-top-3">
+          <h2>This Team has not been rated yet!</h2>
+          <h3>Submit your review and see what’s been said about you!</h3>
+          <a href="#" class="write-review-link-unreviewed">Write Review</a>
+          <h4 class="gray-text">Receive report on your athletic career after submitting your review</h4>
+        </div>
+
+  <% end %>
 
     <div class="col-md-6 text-center overall-info">
       <div class="overall-ratings-summary">
@@ -70,6 +83,7 @@
 
       </div>
     </div>
+  <% if has_reviews?(program) %>
 
     <div class="container">
         <h2 class="underline clear">Overview</h2>
@@ -77,7 +91,9 @@
           The <%= program.sport %> team plays their home games at the <%= program.facility_name %>. This facility was built in <%= program.facility_built %> and holds up to <%= program.facility_capacity %> spectators.  Players feel the home game atmosphere is <%= program.home_atmosphere %>, with average attendance totaling <%= program.average_attendance %> spectators. The top rated element of the facility is their <%= program.facility_strong_point %>, with the <%= program.facility_weak_point %> needing improvement. Overall, the facilities for this program are <%= program.facility_overall_ranking %>.
         </p>
       </div>
+  <% end %>
   </div>
+  <% if has_reviews?(program) %>
   <hr>
 
   <div class="row">
@@ -98,4 +114,5 @@
 
     </div>
   </div>
+  <% end %>
 </div>
