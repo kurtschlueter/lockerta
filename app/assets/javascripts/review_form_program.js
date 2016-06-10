@@ -167,6 +167,21 @@ var reviewFormProgram = function() {
 
   // WHEN THE CONFERENCE RIVAL KEYUP
   $(document).delegate("#review_program_select_rival_input", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
       reviewToSubmit.conference_rival = $(this).val()
   });
+
+  // WHEN TOUGHEST PLACE TO PLAY KEYUP
+  $(document).delegate("#review_program_select_toughestplace_input", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.toughest_conference_place_to_play = $(this).val()
+
+  });
+
+  // HEADCOACH PLAYER RELATIONSHIPS
+  $(document).delegate(".player_relationships", "click", function() {
+
+      debugger
+  });
+
 }
