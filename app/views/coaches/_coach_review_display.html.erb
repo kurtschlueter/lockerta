@@ -1,6 +1,26 @@
 <div id="headcoach" class="tab-pane fade">
         <div class="row">
           <div class="col-md-6">
+  <% if has_reviews?(program) && coach_has_no_reviews(program, coach) %>
+
+      <div class="text-center margin-top-3">
+          <h2>Coaching Change!</h2>
+          <h3>This team has a new head coach!</h3>
+          <a href="#" class="write-review-link-unreviewed">Write Review</a>
+          <h4 class="gray-text">We are working to collect reviews on this new head coach.</h4>
+        </div>
+
+  <% elsif !has_reviews?(program) %>
+
+         <div class="text-center margin-top-3">
+          <h2>This Team has not been rated yet!</h2>
+          <h3>Submit your review and see what’s been said about you!</h3>
+          <a href="#" class="write-review-link-unreviewed">Write Review</a>
+          <h4 class="gray-text">Receive report on your athletic career after submitting your review</h4>
+        </div>
+
+
+    <% else %>
             <div class="row">
               <div class="col-md-4">
                 <img alt="Coach Icon" class="top-icon" src="<%= asset_path( 'coach_icon.png' ) %>">
@@ -12,12 +32,19 @@
                 <h4>Alma Mater: <%= coach.alma_mater %></h4>
               </div>
             </div>
+
+
+  <% end %>
+
+        <% if has_reviews?(program) && !coach_has_no_reviews(program, coach) %>
+
             <div class="container">
               <h2 class="underline">Overview</h2>
               <p>
                 <%= coach.first_name + ' ' + coach.last_name %> has been the Head Coach at <%= school.name %> since <%= coach.year_started %>, posting a <%= coach.win_percentage %>% win percentage in <%= coach.seasons %> seasons. During <%= coach.his %> tenure, <%= coach.last_name %> has led <%= school.name %> to <%= coach.ncaa_appearances %> NCAA tournament appearances, and <%= coach.conference_titles %> Conference Championships. Coach <%= coach.last_name %> heavily recruits players from <%= coach.recruiting_state1 + ', ' + coach.recruiting_state2 + ', and ' + coach.recruiting_state3 %>. Players feel <%= coach.he %> specializes in <%= coach.his %> <%= coach.strong_point %>, but can improve in <%= coach.his + ' ' + coach.weak_point %>. <%= coach.would_play_again_percent %>% of players would return to play another season for Coach <%= coach.last_name %>.
               </p>
             </div>
+        <% end %>
           </div>
 
           <div class="col-md-6 text-center overall-info">
@@ -26,56 +53,58 @@
               <div class='row'>
                 <div class="col-md-5"><h4>Player Development:</h4> </div>
                 <div class="col-md-5">
-                  <%= render_stars(coach.average_player_development) %>
+                  <%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? render_stars(coach.average_player_development) : render_stars(0) %>
                 </div>
                 <div class="col-md-2">
-                  <h4><%= coach.average_player_development %></h4>
+                  <h4><%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? coach.average_player_development : 'Not Rated' %></h4>
                 </div>
               </div>
 
               <div class='row'>
                 <div class="col-md-5"><h4>Player Relationships:</h4> </div>
                 <div class="col-md-5">
-                  <%= render_stars(coach.average_player_relationships) %>
+                  <%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? render_stars(coach.average_player_relationships) : render_stars(0) %>
                 </div>
                 <div class="col-md-2">
-                  <h4><%= coach.average_player_relationships %></h4>
+                  <h4><%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? coach.average_player_relationships : 'Not Rated' %></h4>
                 </div>
               </div>
 
               <div class='row'>
                 <div class="col-md-5"><h4>Pro Connections:</h4> </div>
                 <div class="col-md-5">
-                  <%= render_stars(coach.average_pro_connections) %>
+                  <%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? render_stars(coach.average_pro_connections) : render_stars(0) %>
                 </div>
                 <div class="col-md-2">
-                  <h4><%= coach.average_pro_connections %></h4>
+                  <h4><%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? coach.average_pro_connections : 'Not Rated' %></h4>
                 </div>
               </div>
 
               <div class='row'>
                 <div class="col-md-5"><h4>Recruiting:</h4> </div>
                 <div class="col-md-5">
-                  <%= render_stars(coach.average_recruiting) %>
+                  <%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? render_stars(coach.average_recruiting) : render_stars(0) %>
                 </div>
                 <div class="col-md-2">
-                  <h4><%= coach.average_recruiting %></h4>
+                  <h4><%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? coach.average_recruiting : 'Not Rated' %></h4>
                 </div>
               </div>
 
               <div class='row'>
                 <div class="col-md-5"><h4>Sport Knowledge:</h4> </div>
                 <div class="col-md-5">
-                  <%= render_stars(coach.average_sport_knowledge) %>
+                  <%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? render_stars(coach.average_sport_knowledge) : render_stars(0) %>
                 </div>
                 <div class="col-md-2">
-                  <h4><%= coach.average_sport_knowledge %></h4>
+                  <h4><%= has_reviews?(program) && !coach_has_no_reviews(program, coach) ? coach.average_sport_knowledge : 'Not Rated' %></h4>
                 </div>
               </div>
 
             </div>
           </div>
         </div>
+    <% if has_reviews?(program) && !coach_has_no_reviews(program, coach) %>
+
         <hr>
 
         <div class="row">
@@ -96,4 +125,5 @@
 
           </div>
         </div>
+    <% end %>
       </div>

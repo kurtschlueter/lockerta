@@ -21,7 +21,7 @@ class ProgramsController < ApplicationController
     if @program
       @school = @program.school
       @coach = @program.coach
-      if @program.reviews.length > 0
+      if @program.reviews.length > 0 && @program.reviews.where(coach_id: @coach.id).length > 0
        @average_rating = ((@program.average_facility_rating + @school.average_location_rating + @school.average_education_rating + @coach.average_coach_rating)/4).round(1)
       else
         @average_rating = 'Not Rated'

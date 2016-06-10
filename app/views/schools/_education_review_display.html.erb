@@ -1,5 +1,7 @@
 <div id="education" class="tab-pane fade">
   <div class="row">
+<% if has_reviews?(program) %>
+
     <div class="col-md-6 margin-top-3">
       <div class="row">
         <div class="col-md-5">
@@ -15,41 +17,53 @@
 
     </div>
 
+    <% else %>
+        <div class="col-md-6 text-center margin-top-3">
+          <h2>This Team has not been rated yet!</h2>
+          <h3>Submit your review and see what’s been said about you!</h3>
+          <a href="#" class="write-review-link-unreviewed">Write Review</a>
+          <h4 class="gray-text">Receive report on your athletic career after submitting your review</h4>
+        </div>
+
+  <% end %>
+
     <div class="col-md-6 text-center overall-info">
       <div class="overall-ratings-summary">
         <br>
         <div class='row'>
           <div class="col-md-5"><h4>School Difficulty:</h4> </div>
           <div class="col-md-5">
-            <%= render_stars(school.average_e_school_difficulty) %>
+            <%= has_reviews?(program) ? render_stars(school.average_e_school_difficulty) : render_stars(0) %>
           </div>
           <div class="col-md-2">
-            <h4><%= school.average_e_school_difficulty %></h4>
+            <h4><%= has_reviews?(program) ? school.average_e_school_difficulty : 'Not Rated' %></h4>
           </div>
         </div>
 
         <div class='row'>
           <div class="col-md-5"><h4>Academic Support:</h4> </div>
           <div class="col-md-5">
-            <%= render_stars(school.average_e_academic_support) %>
+            <%= has_reviews?(program) ? render_stars(school.average_e_academic_support) : render_stars(0) %>
           </div>
           <div class="col-md-2">
-            <h4><%= school.average_e_academic_support %></h4>
+            <h4><%= has_reviews?(program) ? school.average_e_academic_support : 'Not Rated' %></h4>
           </div>
         </div>
 
         <div class='row'>
           <div class="col-md-5"><h4>School Reputation:</h4> </div>
           <div class="col-md-5">
-            <%= render_stars(school.average_e_school_reputation) %>
+            <%= has_reviews?(program) ? render_stars(school.average_e_school_reputation) : render_stars(0) %>
           </div>
           <div class="col-md-2">
-            <h4><%= school.average_e_school_reputation %></h4>
+            <h4><%= has_reviews?(program) ? school.average_e_school_reputation : 'Not Rated' %></h4>
           </div>
         </div>
 
       </div>
     </div>
+
+  <% if has_reviews?(program) %>
 
     <div class="container">
         <h2 class="underline clear">Overview</h2>
@@ -57,7 +71,10 @@
           <%= school.name %> is a <%= school.public_or_private %> school with <%= school.percentage_male %>% male and <%= 100 - school.percentage_male %>% female students. The Men’s Basketball program graduates <%= program.graduated_percent %>% of their players which is <%= program.graduated_comparison %> for college athletic programs. Players feel the school provides <%= school.education_overall_ranking %> academic support and have listed the academic curriculum as <%= school.difficulty_language %>.
         </p>
       </div>
+  <% end %>
   </div>
+  <% if has_reviews?(program) %>
+
   <hr>
 
   <div class="row">
@@ -78,4 +95,5 @@
 
     </div>
   </div>
+  <% end %>
 </div>
