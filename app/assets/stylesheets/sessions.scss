@@ -1,3 +1,14 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.login-label {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.login-button {
+    background-color: #F67B29;
+  color: #FFFFFF;
+  padding: .25em 3em;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
+  display: inline-block;
+}
