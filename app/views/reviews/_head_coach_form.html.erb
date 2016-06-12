@@ -1,83 +1,106 @@
 <fieldset id='reviewformheadcoachtab' class='hidden'>
 
-  <legend>
-    <div class="col-md-4">
-      <img alt="Coach Icon" class="top-icon" src="<%= asset_path( 'coach_icon.png' ) %>">
-      <h1>Head Coach</h1>
+    <div class='row'>
+      <div class="col-md-12">
+      <div class='col-md-12 light-gray-div'>
+        <div class="col-md-5">
+          <img alt="Coach Icon" class="img-responsive center-margin smaller-image" src="<%= asset_path( 'coach_icon.png' ) %>">
+        </div>
+        <div class="col-md-7">
+          <h1>Head Coach</h1>
+        </div>
+      </div>
+      </div>
     </div>
-  </legend>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Player Relationships</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Player Relationships</h3></label>
+      <h4 class="center-margin low-font-weight">Ability to  develop  relationships with players</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Player Development</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Player Development</h3></label>
+      <h4 class="center-margin low-font-weight">Ability to  develop  skills of players</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Recruiting</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Recruiting</h3></label>
+      <h4 class="center-margin low-font-weight">Ability to sign talented players to the program</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Professional Connections</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Professional Connections</h3></label>
+      <h4 class="center-margin low-font-weight">Ability to place players at the professional level</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Sport Knowledge</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Sport Knowledge</h3></label>
+      <h4 class="center-margin low-font-weight">Overall knowledge and understanding of the sport</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- radio group -->
-<div class="form-group">
-  <label class="col-md-6 control-label" for="radios">Would You Play for this Coach Again?</label>
-  <div class="col-md-3">
-    <label class="radio-inline" for="radios-0">
-      <input type="radio" name="radios" id="radios-0" value="false" checked="checked">
-      Yes
-    </label>
-    <label class="radio-inline" for="radios-1">
-      <input type="radio" name="radios" id="radios-1" value="true">
-      No
-    </label>
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="radios"><h3 class="center-margin">Would You Play for this Coach Again?</h3></label>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+      <label class="radio-inline" for="radios-0">
+        <input type="radio" name="radios" id="radios-0" value="false" checked="checked">
+        Yes
+      </label>
+      <label class="radio-inline" for="radios-1">
+        <input type="radio" name="radios" id="radios-1" value="true">
+        No
+      </label>
+    </div>
   </div>
-</div>
 
 
   <!-- Textarea -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="textarea">Additional Comments About the Head Coach</label>
-    <div class="col-md-3">
-      <textarea class="form-control" id="textarea" name="textarea"></textarea>
+  <div class="form-group row">
+      <div class="col-md-6 col-md-offset-3 light-gray-div">
+      <h4 class="text-center low-font-weight center-margin">Head Coach Comments</h4>
+      <br>
+      <textarea class="form-control" id="textarea" name="textarea" placeholder="What's it like to play for your coach?"></textarea>
     </div>
   </div>
 
   <!-- Button -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="singlebutton"></label>
-    <div class="col-md-1">
+  <div class="form-group row">
+    <div class="col-md-1 col-md-offset-4">
       <button id="reviewformbacktogetstarted" name="singlebutton" class="btn btn-primary">Program</button>
     </div>
-    <div class="col-md-1">
+    <div class="col-md-1 col-md-offset-2">
       <button id="reviewformfacilities" name="singlebutton" class="btn btn-primary">Facilities</button>
     </div>
   </div>

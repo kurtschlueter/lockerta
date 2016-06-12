@@ -1,67 +1,88 @@
 <fieldset id='reviewformfacilitiestab' class='hidden'>
 
-  <legend>
-    <div class="col-md-4">
-      <img alt="Facilities Icon" class="top-icon" src="<%= asset_path( 'facility_icon.png' ) %>">
-      <h1>Facilities</h1>
+  <div class='row'>
+      <div class="col-md-12">
+      <div class='col-md-12 light-gray-div'>
+        <div class="col-md-5">
+          <img alt="Facility Icon" class="img-responsive center-margin smaller-image" src="<%= asset_path( 'facility_icon.png' ) %>">
+        </div>
+        <div class="col-md-7">
+          <h1>Facilities</h1>
+        </div>
+      </div>
+      </div>
     </div>
-  </legend>
 
    <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Main Arena</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Main Arena</h3></label>
+      <h4 class="center-margin low-font-weight">Main facility used for home games</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Home Game Atmosphere</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Home Game Atmosphere</h3></label>
+      <h4 class="center-margin low-font-weight">Game day environment at home games</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Weight Room</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Weight Room</h3></label>
+      <h4 class="center-margin low-font-weight">Quality of Weight Training Facility</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Locker Room</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Locker Room</h3></label>
+      <h4 class="center-margin low-font-weight">Quality of locker room facility</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Athletic Training Facility</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Athletic Training Facility</h3></label>
+      <h4 class="center-margin low-font-weight">Quality of Athletic Training facility</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Textarea -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="textarea">Additional Comments About the Facilities</label>
-    <div class="col-md-3">
-      <textarea class="form-control" id="textarea" name="textarea"></textarea>
+  <div class="form-group row">
+      <div class="col-md-6 col-md-offset-3 light-gray-div">
+      <h4 class="text-center low-font-weight center-margin">Facilities Comments</h4>
+      <br>
+      <textarea class="form-control" id="textarea" name="textarea" placeholder="What are the facilities like?"></textarea>
     </div>
   </div>
 
   <!-- Button -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="singlebutton"></label>
-    <div class="col-md-1">
+  <div class="form-group row">
+    <div class="col-md-1 col-md-offset-4">
       <button id="reviewformbacktoheadcoach" name="singlebutton" class="btn btn-primary">Head Coach</button>
     </div>
-    <div class="col-md-1">
+    <div class="col-md-1 col-md-offset-2">
       <button id="reviewformlocation" name="singlebutton" class="btn btn-primary">Location</button>
     </div>
   </div>

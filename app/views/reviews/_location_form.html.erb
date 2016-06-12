@@ -1,59 +1,77 @@
 <fieldset id='reviewformlocationtab' class='hidden'>
 
-  <legend>
-    <div class="col-md-4">
-      <img alt="Location Icon" class="top-icon" src="<%= asset_path( 'location_icon.png' ) %>">
-      <h1>Location</h1>
+  <div class='row'>
+      <div class="col-md-12">
+      <div class='col-md-12 light-gray-div'>
+        <div class="col-md-5">
+          <img alt="Location Icon" class="img-responsive center-margin smaller-image" src="<%= asset_path( 'location_icon.png' ) %>">
+        </div>
+        <div class="col-md-7">
+          <h1>Location</h1>
+        </div>
+      </div>
+      </div>
     </div>
-  </legend>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Nightlife</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Nightlife</h3></label>
+      <h4 class="center-margin low-font-weight">Activities and entertainment in the area</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Community Interest</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Community Interest</h3></label>
+      <h4 class="center-margin low-font-weight">Surrounding community’s support of the program</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Program Tradition</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Program Tradition</h3></label>
+      <h4 class="center-margin low-font-weight">Tradition and culture of the program</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="selectbasic">Waether</label>
-    <div class="col-md-3">
+  <div class="form-group row">
+    <div class="col-md-5 col-md-offset-2">
+      <label class="control-label" for="selectbasic"><h3 class="center-margin">Weather</h3></label>
+      <h4 class="center-margin low-font-weight">The weather in the area</h4>
+    </div>
+    <div class="col-md-3 stargin">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
 
   <!-- Textarea -->
-  <div class="form-group">
-    <label class="col-md-6 control-label" for="textarea">Additional Comments About the Location</label>
-    <div class="col-md-3">
-      <textarea class="form-control" id="textarea" name="textarea"></textarea>
+  <div class="form-group row">
+      <div class="col-md-6 col-md-offset-3 light-gray-div">
+      <h4 class="text-center low-font-weight center-margin">Location Comments</h4>
+      <br>
+      <textarea class="form-control" id="textarea" name="textarea" placeholder="Describe the area."></textarea>
     </div>
   </div>
 
   <!-- Button -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="singlebutton"></label>
-    <div class="col-md-1">
+  <div class="form-group row">
+    <div class="col-md-1 col-md-offset-4">
       <button id="reviewformbacktofacilities" name="singlebutton" class="btn btn-primary">Facilities</button>
     </div>
-    <div class="col-md-1">
+    <div class="col-md-1 col-md-offset-2">
       <button id="reviewformeducation" name="singlebutton" class="btn btn-primary">Education</button>
     </div>
   </div>

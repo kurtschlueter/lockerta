@@ -92,7 +92,7 @@ class Program < ActiveRecord::Base
   end
 
   def self.top_five_facilities
-    self.all.sort_by(&:average_facility_rating).reverse[0..4]
+    self.all.select{|program| program.reviews.length > 0}.sort_by(&:average_facility_rating).reverse[0..4]
   end
 
   def graduated_percent
