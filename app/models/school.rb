@@ -65,7 +65,7 @@ class School < ActiveRecord::Base
   end
 
   def self.top_five_locations
-    self.all.sort_by(&:average_location_rating).reverse[0..4]
+    self.all.select{|school| school.reviews.length > 0 }.sort_by(&:average_location_rating).reverse[0..4]
   end
 
   def location_comments
@@ -102,7 +102,7 @@ class School < ActiveRecord::Base
   end
 
   def self.top_five_educations
-    self.all.sort_by(&:average_education_rating).reverse[0..4]
+    self.all.select{|school| school.reviews.length > 0 }.sort_by(&:average_education_rating).reverse[0..4]
   end
 
   def graduated_percent

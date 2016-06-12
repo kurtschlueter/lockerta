@@ -1,0 +1,63 @@
+<div class="text-center">
+  <div class="container" id='graybox'>
+      <div class="content">
+        <h1>Register for JerseyTalk!
+          <img alt="JerseyTalk" src="<%= asset_path( 'jticon.png' ) %>">
+        </h1>
+        <%= form_for @user do |f| %>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-2 text-center login-label">School Attended: </div>
+            <div class="col-md-4">
+              <%= f.select :school_id, options_from_collection_for_select(School.all, :id, :name), {}, { :class => 'reg-dropdown'} %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2 text-center login-label">Sport Played:
+            </div>
+            <div class="col-md-4">
+              <%= f.select :sport, "<option>Select Program</option>".html_safe, {}, { :class => 'reg-dropdown'} %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2 text-center login-label">Jersey Number: </div>
+            <div class="col-md-4">
+              <%= f.number_field :jersey_number %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2 text-center login-label">First Name: </div>
+            <div class="col-md-4">
+              <%= f.text_field :first_name %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2 text-center login-label">Last Name: </div>
+            <div class="col-md-4">
+              <%= f.text_field :last_name %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2 text-center login-label">Email: </div>
+            <div class="col-md-4">
+              <%= f.text_field :email %>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-2 text-center login-label">Password: </div>
+            <div class="col-md-4">
+              <%= f.password_field :password %>
+            </div>
+          </div>
+          <br>
+            <%= f.submit "Sign Up", class: 'login-button' %>
+        <% end %>
+
+    </div>
+  </div>
+</div>
