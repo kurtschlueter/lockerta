@@ -1,3 +1,66 @@
-// Place all the styles related to the Reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.control-label {
+  h4 {
+    margin-top:0;
+    margin-bottom: 0;
+  }
+}
+
+select.form-control, select.form-control:focus {
+    border: 1px solid gray;
+   background: transparent;
+   width: 100%;
+   padding: 5px 35px 5px 5px;
+   font-size: 16px;
+   border: 1px solid gray;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+    background: url(https://www.thesnowpros.org/DesktopModules/CISS.SideMenu/styles/CSS%20flickr.com.vertical/css/dropdown/themes/flickr.com/images/nav-arrow-down-on.png) 100% / 7% no-repeat #eee;
+}
+
+input.form-control, input.form-control:focus {
+  border: 1px solid gray;
+   background: transparent;
+   width: 100%;
+}
+
+.center-margin {
+  margin: 0 auto;
+}
+
+.light-gray-div {
+  background-color: #e4e4e4;
+  color: black;
+  padding: 1em;
+    border-radius:10px;
+}
+
+.smaller-image {
+  height: 5em;
+}
+
+.stargin {
+  margin-top: 1em;
+}
+
+.low-font-weight {
+  font-weight: 200;
+}
+
+.block-display {
+  display: block;
+}
+
+label.radio-inline {
+  font-size: 1.25em;
+}
+
+.above-below-margin {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.form-group.row {
+  margin-left: 0;
+  margin-right: 0;
+}

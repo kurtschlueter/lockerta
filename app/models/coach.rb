@@ -39,7 +39,7 @@ class Coach < ActiveRecord::Base
   end
 
   def self.top_five_coaches
-    self.all.sort_by(&:average_coach_rating).reverse[0..4]
+    self.all.select{|coach| coach.reviews.length > 0}.sort_by(&:average_coach_rating).reverse[0..4]
   end
 
   def win_percentage
