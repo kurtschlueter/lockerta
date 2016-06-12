@@ -1,11 +1,10 @@
 <fieldset id='reviewformselectprogramtab'>
 
-  <legend><h1>Program</h1></legend>
-
+<div class="row">
   <!-- Select School DropDown -->
-  <div class="form-group" id="review_program_select_school_div">
-    <label class="col-md-4 control-label" for="selectbasic">Select School</label>
-    <div class="col-md-4">
+  <div class="form-group col-md-12" id="review_program_select_school_div">
+    <label class="col-md-3 col-md-offset-1 control-label text-center" for="selectbasic"><h4>Select School</h4></label>
+    <div class="col-md-6 col-md-offset-1">
       <select name="selectbasic" class="form-control" id="review_program_select_school_dropdown">
         <option value="1"> Select School </option>
         <% @schools.each.with_index(2) do |school, index| %>
@@ -16,35 +15,35 @@
   </div>
 
   <!-- Select Program DropDown -->
-  <div class="form-group hidden" id="review_program_select_program_div">
-    <label class="col-md-4 control-label" for="selectbasic">Select Program</label>
-    <div class="col-md-4">
+  <div class="form-group hidden col-md-12" id="review_program_select_program_div">
+    <label class="col-md-3 col-md-offset-1 control-label" for="selectbasic"><h4>Select Program</h4></label>
+    <div class="col-md-6 col-md-offset-1">
       <select name="selectbasic" class="form-control" id="review_program_select_program_dropdown">
       </select>
     </div>
   </div>
 
   <!-- Head Coach DropDown -->
-  <div class="form-group hidden" id="review_program_select_headcoach_div">
-    <label class="col-md-4 control-label" for="selectbasic">Select Head Coach</label>
-    <div class="col-md-4">
+  <div class="form-group hidden col-md-12" id="review_program_select_headcoach_div">
+    <label class="col-md-3 col-md-offset-1 control-label" for="selectbasic"><h4>Select Head Coach</h4></label>
+    <div class="col-md-6 col-md-offset-1">
       <select name="selectbasic" class="form-control" id="review_program_select_headcoach_dropdown">
       </select>
     </div>
   </div>
 
   <!-- Conference Rival Text Input-->
-  <div class="form-group hidden" id="review_program_select_rival_div">
-    <label class="col-md-4 control-label" for="Select Conference Rival">Conference Rival</label>
-    <div class="col-md-4">
+  <div class="form-group hidden col-md-12" id="review_program_select_rival_div">
+    <label class="col-md-3 col-md-offset-1 control-label" for="Select Conference Rival"><h4>Conference Rival</h4></label>
+    <div class="col-md-6 col-md-offset-1">
       <input name="Select Conference Rival" type="text" class="form-control input-md" id="review_program_select_rival_input">
     </div>
   </div>
 
   <!-- Toughest Place to Play Text Input -->
-  <div class="form-group hidden" id="review_program_select_toughestplace_div">
-    <label class="col-md-4 control-label" for="selectbasic">Toughest Place to Play</label>
-    <div class="col-md-4">
+  <div class="form-group hidden col-md-12" id="review_program_select_toughestplace_div">
+    <label class="col-md-3 col-md-offset-1 control-label" for="selectbasic"><h4>Toughest Place to Play</h4></label>
+    <div class="col-md-6 col-md-offset-1">
       <input name="Select Conference Rival" type="text" class="form-control input-md" id="review_program_select_toughestplace_input">
     </div>
   </div>
@@ -52,9 +51,11 @@
   <!-- Button -->
   <div class="form-group">
     <label class="col-md-4 control-label" for="singlebutton"></label>
-    <div class="col-md-4">
+    <div class="col-md-4 text-center">
       <button id="reviewformgetstarted" name="getstarted" class="btn btn-primary">Get Started!</button>
     </div>
   </div>
+
+</div>
 
 </fieldset>
