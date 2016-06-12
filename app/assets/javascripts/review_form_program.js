@@ -126,6 +126,8 @@ var reviewFormProgram = function() {
   $( document ).on('change', "#review_program_select_program_dropdown", function() {
 
     // This is explained in a similar situation with school dropdown event listener
+
+    // A LOT MORE VALUES IN THIS OBJECT NEED TO BE RESET **********************
     reviewToSubmit.program_id = ''
     reviewToSubmit.coach_id = ''
 
@@ -179,9 +181,45 @@ var reviewFormProgram = function() {
   });
 
   // HEADCOACH PLAYER RELATIONSHIPS
-  $(document).delegate(".player_relationships", "click", function() {
+  $(document).delegate("#hc_player_relationships a", "click", function() {
+    reviewToSubmit.hc_player_relationships = parseInt($(this).attr('id'));
+  });
 
-      debugger
+  // HEADCOACH PLAYER DEVELOPMENT
+  $(document).delegate("#hc_player_development a", "click", function() {
+    reviewToSubmit.hc_player_development = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH RECRUITING
+  $(document).delegate("#hc_recruiting a", "click", function() {
+    reviewToSubmit.hc_recruiting = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH PRO CONNECTIONS
+  $(document).delegate("#hc_pro_connections a", "click", function() {
+    reviewToSubmit.hc_pro_connections = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH SPORT KNOWLEDGE
+  $(document).delegate("#hc_sport_knowledge a", "click", function() {
+    reviewToSubmit.hc_sport_knowledge = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH WOULD YOU PLAY FOR AGAIN: YES
+  $(document).delegate("#hc_would_you_play_for_again_yes", "click", function() {
+    reviewToSubmit.hc_would_play_with_again = true;
+
+  });
+
+  // HEADCOACH WOULD YOU PLAY FOR AGAIN: NO
+  $(document).delegate("#hc_would_you_play_for_again_n", "click", function() {
+    reviewToSubmit.hc_would_play_with_again = false;
+  });
+
+  // HEADCOACH COMMENTS
+  $(document).delegate("#hc_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.hc_comments = $(this).val()
   });
 
 }
