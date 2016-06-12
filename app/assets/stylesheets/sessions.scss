@@ -12,3 +12,16 @@
   box-shadow: 0px 0px 0px 1px rgba(122,111,122,1);
   display: inline-block;
 }
+
+select.reg-dropdown {
+    border: 1px solid gray;
+   background: transparent;
+   width: 100%;
+   padding: 5px 35px 5px 5px;
+   font-size: 16px;
+   border: 1px solid gray;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+    background: url(https://www.thesnowpros.org/DesktopModules/CISS.SideMenu/styles/CSS%20flickr.com.vertical/css/dropdown/themes/flickr.com/images/nav-arrow-down-on.png) 100% / 10% no-repeat #eee;
+}
