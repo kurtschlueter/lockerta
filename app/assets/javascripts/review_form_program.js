@@ -222,4 +222,94 @@ var reviewFormProgram = function() {
       reviewToSubmit.hc_comments = $(this).val()
   });
 
+  // FACILITIES MAIN ARENA
+  $(document).delegate("#f_main_arena a", "click", function() {
+    reviewToSubmit.f_main_arena = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES HOME GAME ATMOSPHERE
+  $(document).delegate("#f_home_atmosphere a", "click", function() {
+    reviewToSubmit.f_home_atmosphere = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES WEIGHT ROOM
+  $(document).delegate("#f_weight_room a", "click", function() {
+    reviewToSubmit.f_weight_room = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES LOCKER ROOM
+  $(document).delegate("#f_locker_room a", "click", function() {
+    reviewToSubmit.f_locker_room = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES TRAINING FACILITY
+  $(document).delegate("#f_training_facility a", "click", function() {
+    reviewToSubmit.f_training_facility = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES COMMENTS
+  $(document).delegate("#f_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.f_comments = $(this).val()
+  });
+
+  // LOCATION NIGHTLIFE
+  $(document).delegate("#l_nightlife a", "click", function() {
+    reviewToSubmit.l_nightlife = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION COMMUNITY INTEREST
+  $(document).delegate("#l_community_interest a", "click", function() {
+    reviewToSubmit.l_community_interest = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION WEATHER
+  $(document).delegate("#l_weather a", "click", function() {
+    reviewToSubmit.l_weather = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION PROGRAM TRADITION
+  $(document).delegate("#l_program_tradition a", "click", function() {
+    reviewToSubmit.l_program_tradition = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION COMMENTS
+  $(document).delegate("#l_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.l_comments = $(this).val()
+      debugger
+  });
+
+  // EDUCATION SCHOOL DIFFICULTY
+  $(document).delegate("#e_school_difficulty a", "click", function() {
+    reviewToSubmit.e_school_difficulty = parseInt($(this).attr('id'));
+  });
+
+  // EDUCATION ACADEMIC SUPPORT
+  $(document).delegate("#e_academic_support a", "click", function() {
+    reviewToSubmit.e_academic_support = parseInt($(this).attr('id'));
+  });
+
+  // EDUCATION SCHOOL REPUTATION
+  $(document).delegate("#e_school_reputation a", "click", function() {
+    reviewToSubmit.e_school_reputation = parseInt($(this).attr('id'));
+  });
+
+  // EDUCATION DID YOU GRADUATE: YES
+  $(document).delegate("#e_graduated_yes", "click", function() {
+    reviewToSubmit.e_graduated = true;
+
+  });
+
+  // EDUCATION DID YOU GRADUATE: NO
+  $(document).delegate("#e_graduated_no", "click", function() {
+    reviewToSubmit.e_graduated = false;
+  });
+
+  // EDUCATION
+  $(document).delegate("#e_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.e_comments = $(this).val()
+      debugger
+  });
 }
