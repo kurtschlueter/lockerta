@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_endpoint => 's3-us-west-2.amazonaws.com',

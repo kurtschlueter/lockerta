@@ -10,6 +10,8 @@ class CreateUsers < ActiveRecord::Migration
       t.references :school
       t.string :sport
       t.boolean :admin
+      t.string :password_reset_token
+      t.datetime :password_reset_sent_at
       t.timestamps null: false
     end
   end

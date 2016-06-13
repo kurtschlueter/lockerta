@@ -1,0 +1,21 @@
+<div id="tf-home" class="text-center">
+  <div class="container" id='graybox'>
+      <div class="content">
+        <h1>Reset Your Password
+          <img alt="JerseyTalk" src="<%= asset_path( 'jticon.png' ) %>">
+        </h1>
+        <%= form_tag password_resets_path, :method => :post do %>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-3 text-center login-label">Email:</div>
+            <div class="col-md-3">
+              <%= text_field_tag :email, params[:email] %>
+            </div>
+          </div>
+          <br>
+          <div class="actions"><%= submit_tag "Reset Password", class: 'login-button' %></div>
+        <% end %>
+
+    </div>
+  </div>
+</div>
+
