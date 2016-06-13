@@ -21,6 +21,7 @@
 //= require review_form_tabbing
 //= require review_form_program
 //= require sessions
+//= require toastr
 
 console.log('app.js')
 $(document).ready(function(){
