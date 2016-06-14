@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome to JerseyTalk! You are now registered!"
+      flash[:success] = "Welcome to JerseyTalk! You are now registered!"
       redirect_to "/"
     else
-      flash[:errors] = @user.errors.full_messages
+      flash.now[:errors] = @user.errors.full_messages
       render 'new'
     end
   end

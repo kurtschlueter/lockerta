@@ -99,7 +99,7 @@ articles_for_seeding = [
 
 Article.create!(articles_for_seeding)
 
-coaches = 50.times.map do
+coaches = 51.times.map do
   Coach.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, alma_mater: ["University of Notre Dame", 'University of West Florida', 'Duke University'].sample, gender: ['male', 'female'].sample, wins: rand(1..50), losses: rand(1..50), year_started: [2001, 2005, 1977].sample, ncaa_appearances: rand(0..10), conference_titles: rand(0..5), recruiting_state1: 'Illinois', recruiting_state2: 'Florida', recruiting_state3: 'Georgia', seasons: rand(1..5))
 end
 
@@ -124,3 +124,7 @@ programs.each do |program|
     program.reviews.create(user: users.sample, coach: program.coach, school: program.school, hc_player_relationships: rand(1..5), hc_player_development: rand(1..5), hc_recruiting: rand(1..5), hc_pro_connections: rand(1..5), hc_sport_knowledge: rand(1..5), hc_would_play_with_again: [true, false].sample, hc_comments: 'Coach Hancock is a professional. He knows how to treat his athletes and get the best out of them.', f_main_arena: rand(1..5), f_home_atmosphere: rand(1..5), f_weight_room: rand(1..5), f_locker_room: rand(1..5), f_training_facility: rand(1..5), f_comments: 'I like our facilities. I think that they have good equipment and standards for school this size.', l_program_tradition: rand(1..5), l_community_interest: rand(1..5), l_weather: rand(1..5), l_nightlife: rand(1..5), l_comments: 'Pensacola is amazing and the school is close to everything.', e_school_difficulty: rand(1..5), e_academic_support: rand(1..5), e_school_reputation: rand(1..5), e_graduated: [true, false].sample, e_comments: "The education at UWF is challenging where I use my my maximum capacities in class yet not exceeding to where I'm completely clueless and unable to do well in class.", conference_rival: 'UWF', toughest_conference_place_to_play: 'Gulf South Conference')
   end
 end
+
+School.first.programs.create(sport: "Track and Field", school: School.first, coach: Coach.first, facility_name: ['The Complex', 'Pool', 'The Roof', 'Arena'].sample, facility_capacity: rand(2000..10000), gear: 'Nike', rivals: 'Valdosta State, Delta State', conference: 'Gulf South Conference', record_last_season: '18-7', national_titles: 0, conference_titles: 5, website: 'http://www.goargos.com/', facility_built: 2004, average_attendance: rand(300..1500), home_atmosphere: ['modest', 'wild', 'quiet'].sample)
+
+Program.find(10).update_attributes(coach: Coach.last)

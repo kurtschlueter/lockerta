@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
 
+
+
 </head>
 <body>
 
@@ -112,3 +114,19 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    toastr.error("<%= error %>")
+  <% end %>
+<% end %>
+
+<% if flash[:info] %>
+    toastr.info("<%= flash[:info] %>")
+<% end %>
+
+<% if flash[:success] %>
+    toastr.success("<%= flash[:success] %>")
+<% end %>
+</script>
