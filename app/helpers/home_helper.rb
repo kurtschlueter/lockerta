@@ -1,7 +1,11 @@
 module HomeHelper
   def render_stars(value)
     output = ''
-    if value.is_a?(Float)
+    if value == 2.5
+      2.times {output += image_tag('full-star.png')}
+      output += image_tag('half-star.png')
+      2.times {output += image_tag('empty-star.png')}
+    elsif value.is_a?(Float)
       if (1..5).include?(value.floor)
         value.floor.times { output += image_tag('full-star.png')}
       end
