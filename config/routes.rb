@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -22,7 +24,11 @@ Rails.application.routes.draw do
     get :yes, :on => :collection
   end
 
+  resources :password_resets
+
   resources :programs
+
+  resources :users
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

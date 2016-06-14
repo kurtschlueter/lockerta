@@ -139,8 +139,10 @@ ActiveRecord::Schema.define(version: 20160601153226) do
     t.integer  "school_id"
     t.string   "sport"
     t.boolean  "admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

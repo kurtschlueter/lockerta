@@ -20,6 +20,8 @@
 //= require ratings_hover
 //= require review_form_tabbing
 //= require review_form_program
+//= require sessions
+//= require toastr
 
 console.log('app.js')
 $(document).ready(function(){
@@ -29,4 +31,5 @@ $(document).ready(function(){
   ratingsHover()
   reviewFormTabbing()
   reviewFormProgram()
+  schoolPicker();
 });

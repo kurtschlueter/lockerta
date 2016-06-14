@@ -1,26 +1,28 @@
 <div id="tf-home" class="text-center">
   <div class="container" id='graybox'>
-      <div class="content"><h1>Login</h1>
+      <div class="content">
+        <h1>Welcome to JerseyTalk!
+          <img alt="JerseyTalk" src="<%= asset_path( 'jticon.png' ) %>">
+        </h1>
         <%= form_tag "/login" do %>
-
-          Email: <%= text_field_tag :email %>
-          Password: <%= password_field_tag :password %>
-          <%= submit_tag "Login" %>
-
-        <% end %>
-
-
-        <div>
-          <h3><strong>Player Rating</strong></h3>
-          <div style="width:180px; margin: auto" class='star-container'>
-            <% 5.times do |x|%>
-              <% current_id = 'player' + (x+1).to_s%>
-              <a href="#" id=<%=current_id%> class="rating-stars">
-                <img class="rating-stars-img" alt="emptystar" src="<%= asset_path( 'empty-star.png' ) %>" data-fullstar="<%= asset_path( 'full-star.png' ) %>" data-emptystar="<%= asset_path( 'empty-star.png' ) %>">
-              </a>
-            <% end %>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-3 text-center login-label">Email: </div>
+            <div class="col-md-3">
+              <%= text_field_tag :email %>
+            </div>
           </div>
-        </div>
+          <br>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-3 text-center login-label">Password: </div>
+            <div class="col-md-3">
+              <%= password_field_tag :password %>
+            </div>
+          </div>
+          <br>
+            <%= submit_tag "Login", class: 'login-button' %>
+        <% end %>
+        <br>
+        <h4><%= link_to "Register", new_user_path %> | <%= link_to "Forgotten Password?", new_password_reset_path %></h4>
 
     </div>
   </div>
