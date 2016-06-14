@@ -110,10 +110,188 @@ var reviewFormTabbing = function() {
 
   $(document).on('click', '#reviewforsubmit', function(e){
     e.preventDefault();
-    // $('#reviewformeducationtab').addClass('hidden')
-    // $('#reviewformconfirmationtab').removeClass('hidden')
+    $('#reviewformeducationtab').addClass('hidden')
+    $('#reviewformconfirmationtab').removeClass('hidden')
 
-    // $('#progressbarconfirmation').removeClass('progress-bar-warning')
-    // $('#progressbarconfirmation').addClass('progress-bar-success')
+    $('#progressbarconfirmation').removeClass('progress-bar-warning')
+    $('#progressbarconfirmation').addClass('progress-bar-success')
+  });
+
+// HERE ILL MAKE THE TABS CLICKABLE AS WELL
+
+  // CLICKED ON SELECT PROGRAM TAB
+  $(document).on('click', '#progressbarselectprogram', function(e){
+    e.preventDefault();
+    $('#reviewformeducationtab').addClass('hidden')
+    $('#reviewformconfirmationtab').addClass('hidden')
+    $('#reviewformlocationtab').addClass('hidden')
+    $('#reviewformfacilitiestab').addClass('hidden')
+    $('#reviewformheadcoachtab').addClass('hidden')
+
+    $('#reviewformselectprogramtab').removeClass('hidden')
+
+    $('#progressbarselectprogram').removeClass('progress-bar-warning')
+    $('#progressbarselectprogram').addClass('progress-bar-success')
+
+    $('#progressbarfacilities').removeClass('progress-bar-success')
+    $('#progressbarfacilities').addClass('progress-bar-warning')
+
+    $('#progressbareducation').removeClass('progress-bar-success')
+    $('#progressbareducation').addClass('progress-bar-warning')
+
+    $('#progressbarlocation').removeClass('progress-bar-success')
+    $('#progressbarlocation').addClass('progress-bar-warning')
+
+    $('#progressbarheadcoach').removeClass('progress-bar-success')
+    $('#progressbarheadcoach').addClass('progress-bar-warning')
+
+    $('#progressbarconfirmation').removeClass('progress-bar-success')
+    $('#progressbarconfirmation').addClass('progress-bar-warning')
+  });
+
+  // CLICKED ON HEAD COAHC TAB
+  $(document).on('click', '#progressbarheadcoach', function(e){
+    e.preventDefault();
+    $('#reviewformselectprogramtab').addClass('hidden')
+    $('#reviewformeducationtab').addClass('hidden')
+    $('#reviewformconfirmationtab').addClass('hidden')
+    $('#reviewformlocationtab').addClass('hidden')
+    $('#reviewformfacilitiestab').addClass('hidden')
+
+    $('#reviewformheadcoachtab').removeClass('hidden')
+
+    $('#progressbarselectprogram').removeClass('progress-bar-warning')
+    $('#progressbarselectprogram').addClass('progress-bar-success')
+
+    $('#progressbarheadcoach').removeClass('progress-bar-warning')
+    $('#progressbarheadcoach').addClass('progress-bar-success')
+
+    $('#progressbarfacilities').removeClass('progress-bar-success')
+    $('#progressbarfacilities').addClass('progress-bar-warning')
+
+    $('#progressbareducation').removeClass('progress-bar-success')
+    $('#progressbareducation').addClass('progress-bar-warning')
+
+    $('#progressbarlocation').removeClass('progress-bar-success')
+    $('#progressbarlocation').addClass('progress-bar-warning')
+
+    $('#progressbarconfirmation').removeClass('progress-bar-success')
+    $('#progressbarconfirmation').addClass('progress-bar-warning')
+  });
+
+  // CLICKED ON FACILITIES TAB
+  $(document).on('click', '#progressbarfacilities', function(e){
+    e.preventDefault();
+    $('#reviewformselectprogramtab').addClass('hidden')
+    $('#reviewformeducationtab').addClass('hidden')
+    $('#reviewformconfirmationtab').addClass('hidden')
+    $('#reviewformlocationtab').addClass('hidden')
+    $('#reviewformheadcoachtab').addClass('hidden')
+    $('#reviewformfacilitiestab').removeClass('hidden')
+
+    $('#progressbarselectprogram').removeClass('progress-bar-warning')
+    $('#progressbarselectprogram').addClass('progress-bar-success')
+
+    $('#progressbarheadcoach').removeClass('progress-bar-warning')
+    $('#progressbarheadcoach').addClass('progress-bar-success')
+
+    $('#progressbarfacilities').removeClass('progress-bar-warning')
+    $('#progressbarfacilities').addClass('progress-bar-success')
+
+    $('#progressbareducation').removeClass('progress-bar-success')
+    $('#progressbareducation').addClass('progress-bar-warning')
+
+    $('#progressbarlocation').removeClass('progress-bar-success')
+    $('#progressbarlocation').addClass('progress-bar-warning')
+
+    $('#progressbarconfirmation').removeClass('progress-bar-success')
+    $('#progressbarconfirmation').addClass('progress-bar-warning')
+  });
+
+  // CLICKED ON LOCATION TAB
+  $(document).on('click', '#progressbarlocation', function(e){
+    e.preventDefault();
+    $('#reviewformselectprogramtab').addClass('hidden')
+    $('#reviewformeducationtab').addClass('hidden')
+    $('#reviewformconfirmationtab').addClass('hidden')
+    $('#reviewformheadcoachtab').addClass('hidden')
+    $('#reviewformfacilitiestab').addClass('hidden')
+    $('#reviewformlocationtab').removeClass('hidden')
+
+    $('#progressbarselectprogram').removeClass('progress-bar-warning')
+    $('#progressbarselectprogram').addClass('progress-bar-success')
+
+    $('#progressbarheadcoach').removeClass('progress-bar-warning')
+    $('#progressbarheadcoach').addClass('progress-bar-success')
+
+    $('#progressbarfacilities').removeClass('progress-bar-warning')
+    $('#progressbarfacilities').addClass('progress-bar-success')
+
+    $('#progressbarlocation').removeClass('progress-bar-warning')
+    $('#progressbarlocation').addClass('progress-bar-success')
+
+    $('#progressbareducation').removeClass('progress-bar-success')
+    $('#progressbareducation').addClass('progress-bar-warning')
+
+    $('#progressbarconfirmation').removeClass('progress-bar-success')
+    $('#progressbarconfirmation').addClass('progress-bar-warning')
+  });
+
+  // CLICKED ON EDUCATION TAB
+  $(document).on('click', '#progressbareducation', function(e){
+    e.preventDefault();
+    $('#reviewformselectprogramtab').addClass('hidden')
+    $('#reviewformconfirmationtab').addClass('hidden')
+    $('#reviewformheadcoachtab').addClass('hidden')
+    $('#reviewformfacilitiestab').addClass('hidden')
+    $('#reviewformlocationtab').addClass('hidden')
+    $('#reviewformeducationtab').removeClass('hidden')
+
+    $('#progressbarselectprogram').removeClass('progress-bar-warning')
+    $('#progressbarselectprogram').addClass('progress-bar-success')
+
+    $('#progressbarheadcoach').removeClass('progress-bar-warning')
+    $('#progressbarheadcoach').addClass('progress-bar-success')
+
+    $('#progressbarfacilities').removeClass('progress-bar-warning')
+    $('#progressbarfacilities').addClass('progress-bar-success')
+
+    $('#progressbarlocation').removeClass('progress-bar-warning')
+    $('#progressbarlocation').addClass('progress-bar-success')
+
+    $('#progressbareducation').removeClass('progress-bar-warning')
+    $('#progressbareducation').addClass('progress-bar-success')
+
+    $('#progressbarconfirmation').removeClass('progress-bar-success')
+    $('#progressbarconfirmation').addClass('progress-bar-warning')
+  });
+
+  // CLICKED ON CONFIRMATION TAB
+  $(document).on('click', '#progressbarconfirmation', function(e){
+    e.preventDefault();
+    $('#reviewformselectprogramtab').addClass('hidden')
+    $('#reviewformheadcoachtab').addClass('hidden')
+    $('#reviewformfacilitiestab').addClass('hidden')
+    $('#reviewformlocationtab').addClass('hidden')
+    $('#reviewformeducationtab').addClass('hidden')
+    $('#reviewformconfirmationtab').removeClass('hidden')
+
+    $('#progressbarselectprogram').removeClass('progress-bar-warning')
+    $('#progressbarselectprogram').addClass('progress-bar-success')
+
+    $('#progressbarheadcoach').removeClass('progress-bar-warning')
+    $('#progressbarheadcoach').addClass('progress-bar-success')
+
+    $('#progressbarfacilities').removeClass('progress-bar-warning')
+    $('#progressbarfacilities').addClass('progress-bar-success')
+
+    $('#progressbarlocation').removeClass('progress-bar-warning')
+    $('#progressbarlocation').addClass('progress-bar-success')
+
+    $('#progressbareducation').removeClass('progress-bar-warning')
+    $('#progressbareducation').addClass('progress-bar-success')
+
+    $('#progressbarconfirmation').removeClass('progress-bar-warning')
+    $('#progressbarconfirmation').addClass('progress-bar-success')
   });
 }

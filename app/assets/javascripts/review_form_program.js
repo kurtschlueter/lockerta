@@ -2,7 +2,6 @@
 
 // This object will be passed to the review controller create method once it is populated.
 var reviewToSubmit = {
-  user_id: '',
   coach_id: '',
   school_id: '',
   program_id: '',
@@ -277,7 +276,6 @@ var reviewFormProgram = function() {
   $(document).delegate("#l_comments", "keyup", function() {
       // Every keyup in this textbox and the review object will update accordingly
       reviewToSubmit.l_comments = $(this).val()
-      debugger
   });
 
   // EDUCATION SCHOOL DIFFICULTY
@@ -310,6 +308,22 @@ var reviewFormProgram = function() {
   $(document).delegate("#e_comments", "keyup", function() {
       // Every keyup in this textbox and the review object will update accordingly
       reviewToSubmit.e_comments = $(this).val()
-      debugger
+  });
+
+
+  $(document).on('click', '#review-form-submit-button', function(e){
+    alert('s')
+    e.preventDefault();
+
+      $.ajax({
+        url: '/reviews/yes',
+        type: "GET",
+        dataType: "json",
+        data: { review_data: 'l'},
+        success: function(response){
+          debugger
+        }
+      });
+
   });
 }

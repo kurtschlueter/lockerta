@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   end
 
   resources :articles
-  resources :reviews
+  # resources :reviews
+
+  resources :reviews do
+    get :yes, :on => :collection
+  end
 
   resources :programs
 

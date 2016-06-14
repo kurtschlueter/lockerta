@@ -10,13 +10,34 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new
-    @schools = School.all
+    if current_user
+      @user = current_user
+      @review = Review.new
+      @schools = School.all
+    else
+      redirect_to "/login"
+    end
   end
 
   def create
 
+    puts '--------------create-----------'
+    puts params
+    puts '----------------------------------'
+    redirect_to '/'
+    # @article = Article.new(article_params)
+    # @article.user = current_user
+    # @article.save
+    # flash.notice = "Article '#{@article.title}' Created!"
+    # redirect_to article_path(@article)
+  end
 
+  def yes
+
+    puts '--------------create-----------'
+    puts params
+    puts '----------------------------------'
+    redirect_to '/'
     # @article = Article.new(article_params)
     # @article.user = current_user
     # @article.save
@@ -37,6 +58,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    redirect_to '/'
     # @article = Article.find(params[:id])
     # @article.update(article_params)
 
