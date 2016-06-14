@@ -312,58 +312,59 @@ var reviewFormProgram = function() {
 
 
   $(document).on('click', '#review-form-submit-button', function(e){
-    // alert('s')
     e.preventDefault();
+  // reviewToSubmit.coach_id = '1';
+  // reviewToSubmit.school_id = '1';
+  // reviewToSubmit.program_id = '1';
 
-  reviewToSubmit.coach_id = '1';
-  reviewToSubmit.school_id = '1';
-  reviewToSubmit.program_id = '1';
+  // reviewToSubmit.hc_player_relationships = '1';
+  // reviewToSubmit.hc_player_development = '2';
+  // reviewToSubmit.hc_recruiting = '3';
+  // reviewToSubmit.hc_pro_connections = '4';
+  // reviewToSubmit.hc_sport_knowledge = '5';
+  // reviewToSubmit.hc_would_play_with_again = true;
+  // reviewToSubmit.hc_comments = 'sssss';
 
-  reviewToSubmit.hc_player_relationships = '1';
-  reviewToSubmit.hc_player_development = '2';
-  reviewToSubmit.hc_recruiting = '3';
-  reviewToSubmit.hc_pro_connections = '4';
-  reviewToSubmit.hc_sport_knowledge = '5';
-  reviewToSubmit.hc_would_play_with_again = true;
-  reviewToSubmit.hc_comments = 'sssss';
+  // reviewToSubmit.f_main_arena = '3';
+  // reviewToSubmit.f_home_atmosphere = '3';
+  // reviewToSubmit.f_weight_room = '3';
+  // reviewToSubmit.f_locker_room = '3';
+  // reviewToSubmit.f_training_facility = '3';
+  // reviewToSubmit.f_comments = 'ddddd';
 
-  reviewToSubmit.f_main_arena = '3';
-  reviewToSubmit.f_home_atmosphere = '3';
-  reviewToSubmit.f_weight_room = '3';
-  reviewToSubmit.f_locker_room = '3';
-  reviewToSubmit.f_training_facility = '3';
-  reviewToSubmit.f_comments = 'ddddd';
+  // reviewToSubmit.l_program_tradition = '3';
+  // reviewToSubmit.l_community_interest = '3';
+  // reviewToSubmit.l_weather = '3';
+  // reviewToSubmit.l_nightlife = '3';
+  // reviewToSubmit.l_comments = 'rrrrr';
 
-  reviewToSubmit.l_program_tradition = '3';
-  reviewToSubmit.l_community_interest = '3';
-  reviewToSubmit.l_weather = '3';
-  reviewToSubmit.l_nightlife = '3';
-  reviewToSubmit.l_comments = 'rrrrr';
+  // reviewToSubmit.e_school_difficulty = '4';
+  // reviewToSubmit.e_academic_support = '4';
+  // reviewToSubmit.e_school_reputation = '4';
+  // reviewToSubmit.e_graduated = true;
+  // reviewToSubmit.e_comments = 'eeeee';
 
-  reviewToSubmit.e_school_difficulty = '4';
-  reviewToSubmit.e_academic_support = '4';
-  reviewToSubmit.e_school_reputation = '4';
-  reviewToSubmit.e_graduated = true;
-  reviewToSubmit.e_comments = 'eeeee';
-
-  reviewToSubmit.conference_rival = 'eeee';
-  reviewToSubmit.toughest_conference_place_to_play = 'eeee';
+  // reviewToSubmit.conference_rival = 'eeee';
+  // reviewToSubmit.toughest_conference_place_to_play = 'eeee';
 
     $(".empty_fields_table").empty()
-    // $('.empty_fields_div').addClass('hidden')
-      $.ajax({
-        url: '/reviews',
-        type: "POST",
-        dataType: "json",
-        data: { review_data: reviewToSubmit},
-        success: function(response){
+    $.ajax({
+      url: '/reviews',
+      type: "POST",
+      dataType: "json",
+      data: { review_data: reviewToSubmit},
+      success: function(response){
+        if(response.empty_fields[0] == 'saved') {
+          window.location.assign('/');
+        } else {
           $('#empty-fields-div').removeClass('hidden')
           // debugger
           for(var x=0; x < response.empty_fields.length; x++) {
             $('.empty_fields_table').append("<tr class='danger'><td>"+ response.empty_fields[x] +"</td></tr>")
           }
         }
-      });
+      }
+    });
 
   });
 }

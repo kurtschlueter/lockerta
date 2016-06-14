@@ -65,16 +65,11 @@ class ReviewsController < ApplicationController
               toughest_conference_place_to_play: params[:review_data][:toughest_conference_place_to_play])
 
       if @review.save
-          render :json => {:empty_fields => ['save']}
-      else
-        render :json => {:empty_fields => ['no save','c']}
+          render :json => {:empty_fields => ['saved']}
       end
     else
-
-        render :json => {:empty_fields => empty_fields}
-
+      render :json => {:empty_fields => empty_fields}
     end
-
   end
 
   def destroy
