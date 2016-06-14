@@ -1,4 +1,4 @@
-<fieldset id='reviewformheadcoachtab' class='hidden'>
+<div id='reviewformheadcoachtab' class='hidden'>
 
     <div class='row'>
       <div class="col-md-12">
@@ -19,7 +19,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">Player Relationships</h3></label>
       <h4 class="center-margin low-font-weight">Ability to  develop  relationships with players</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="hc_player_relationships">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -30,7 +30,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">Player Development</h3></label>
       <h4 class="center-margin low-font-weight">Ability to  develop  skills of players</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="hc_player_development">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -41,7 +41,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">Recruiting</h3></label>
       <h4 class="center-margin low-font-weight">Ability to sign talented players to the program</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="hc_recruiting">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -52,7 +52,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">Professional Connections</h3></label>
       <h4 class="center-margin low-font-weight">Ability to place players at the professional level</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="hc_pro_connections">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -63,7 +63,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">Sport Knowledge</h3></label>
       <h4 class="center-margin low-font-weight">Overall knowledge and understanding of the sport</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="hc_sport_knowledge">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -74,12 +74,12 @@
       <label class="control-label" for="radios"><h3 class="center-margin">Would You Play for this Coach Again?</h3></label>
     </div>
     <div class="col-md-3 col-md-offset-1">
-      <label class="radio-inline" for="radios-0">
-        <input type="radio" name="radios" id="radios-0" value="false" checked="checked">
+      <label class="radio-inline" for="hc_would_you_play_for_again_yes">
+        <input type="radio" name="radios" id="hc_would_you_play_for_again_yes">
         Yes
       </label>
-      <label class="radio-inline" for="radios-1">
-        <input type="radio" name="radios" id="radios-1" value="true">
+      <label class="radio-inline" for="hc_would_you_play_for_again_no">
+        <input type="radio" name="radios" id="hc_would_you_play_for_again_no">
         No
       </label>
     </div>
@@ -91,7 +91,7 @@
       <div class="col-md-6 col-md-offset-3 light-gray-div">
       <h4 class="text-center low-font-weight center-margin">Head Coach Comments</h4>
       <br>
-      <textarea class="form-control" id="textarea" name="textarea" placeholder="What's it like to play for your coach?"></textarea>
+      <textarea class="form-control" id="hc_comments" name="textarea" placeholder="What's it like to play for your coach?"></textarea>
     </div>
   </div>
 
@@ -105,4 +105,4 @@
     </div>
   </div>
 
-</fieldset>
+</div>

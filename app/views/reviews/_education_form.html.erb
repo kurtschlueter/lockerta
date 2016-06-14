@@ -1,4 +1,4 @@
-<fieldset id='reviewformeducationtab' class='hidden'>
+<div id='reviewformeducationtab' class='hidden'>
 
   <div class='row'>
       <div class="col-md-12">
@@ -19,7 +19,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">School Difficulty</h3></label>
       <h4 class="center-margin low-font-weight">Difficulty of classes and coursework</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="e_school_difficulty">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -30,7 +30,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">Academic Support</h3></label>
       <h4 class="center-margin low-font-weight">Academic assistance for athletes</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="e_academic_support">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -41,7 +41,7 @@
       <label class="control-label" for="selectbasic"><h3 class="center-margin">School Reputation</h3></label>
       <h4 class="center-margin low-font-weight">Academic reputation of the school</h4>
     </div>
-    <div class="col-md-3 stargin">
+    <div class="col-md-3 stargin" id="e_school_reputation">
       <%= render partial: 'stars_div' %>
     </div>
   </div>
@@ -52,12 +52,12 @@
       <label class="control-label" for="radios"><h3 class="center-margin">Did you graduate?</h3></label>
     </div>
     <div class="col-md-3 col-md-offset-1">
-      <label class="radio-inline" for="radios-2">
-        <input type="radio" name="radios" id="radios-2" value="false" checked="checked">
+      <label class="radio-inline" for="e_graduated_yes">
+        <input type="radio" name="radios" id="e_graduated_yes" value="false" checked="checked">
         Yes
       </label>
-      <label class="radio-inline" for="radios-3">
-        <input type="radio" name="radios" id="radios-3" value="true">
+      <label class="radio-inline" for="e_graduated_no">
+        <input type="radio" name="radios" id="e_graduated_no" value="true">
         No
       </label>
     </div>
@@ -69,7 +69,7 @@
       <div class="col-md-6 col-md-offset-3 light-gray-div">
       <h4 class="text-center low-font-weight center-margin">Education Comments</h4>
       <br>
-      <textarea class="form-control" id="textarea" name="textarea" placeholder="What is the academic experience like?"></textarea>
+      <textarea class="form-control" id="e_comments" name="textarea" placeholder="What is the academic experience like?"></textarea>
     </div>
   </div>
 
@@ -83,4 +83,4 @@
     </div>
   </div>
 
-</fieldset>
+</div>

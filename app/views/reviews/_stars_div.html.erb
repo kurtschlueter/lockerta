@@ -1,7 +1,6 @@
 <div style="width:180px; margin: auto" class='star-container'>
     <% 5.times do |x|%>
-    <!-- player doesnt mean anyting here. I just needed unique ids and put player in front of them for the heck of it -->
-      <% current_id = 'player' + (x+1).to_s%>
+      <% current_id = (x+1).to_s%>
       <a href="#" id=<%=current_id%> class="rating-stars">
         <img class="rating-stars-img" alt="emptystar" src="<%= asset_path( 'empty-star.png' ) %>" data-fullstar="<%= asset_path( 'full-star.png' ) %>" data-emptystar="<%= asset_path( 'empty-star.png' ) %>">
       </a>

@@ -2,7 +2,6 @@
 
 // This object will be passed to the review controller create method once it is populated.
 var reviewToSubmit = {
-  user_id: '',
   coach_id: '',
   school_id: '',
   program_id: '',
@@ -126,6 +125,8 @@ var reviewFormProgram = function() {
   $( document ).on('change', "#review_program_select_program_dropdown", function() {
 
     // This is explained in a similar situation with school dropdown event listener
+
+    // A LOT MORE VALUES IN THIS OBJECT NEED TO BE RESET **********************
     reviewToSubmit.program_id = ''
     reviewToSubmit.coach_id = ''
 
@@ -179,9 +180,191 @@ var reviewFormProgram = function() {
   });
 
   // HEADCOACH PLAYER RELATIONSHIPS
-  $(document).delegate(".player_relationships", "click", function() {
-
-      debugger
+  $(document).delegate("#hc_player_relationships a", "click", function() {
+    reviewToSubmit.hc_player_relationships = parseInt($(this).attr('id'));
   });
 
+  // HEADCOACH PLAYER DEVELOPMENT
+  $(document).delegate("#hc_player_development a", "click", function() {
+    reviewToSubmit.hc_player_development = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH RECRUITING
+  $(document).delegate("#hc_recruiting a", "click", function() {
+    reviewToSubmit.hc_recruiting = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH PRO CONNECTIONS
+  $(document).delegate("#hc_pro_connections a", "click", function() {
+    reviewToSubmit.hc_pro_connections = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH SPORT KNOWLEDGE
+  $(document).delegate("#hc_sport_knowledge a", "click", function() {
+    reviewToSubmit.hc_sport_knowledge = parseInt($(this).attr('id'));
+  });
+
+  // HEADCOACH WOULD YOU PLAY FOR AGAIN: YES
+  $(document).delegate("#hc_would_you_play_for_again_yes", "click", function() {
+    reviewToSubmit.hc_would_play_with_again = true;
+
+  });
+
+  // HEADCOACH WOULD YOU PLAY FOR AGAIN: NO
+  $(document).delegate("#hc_would_you_play_for_again_no", "click", function() {
+    reviewToSubmit.hc_would_play_with_again = false;
+  });
+
+  // HEADCOACH COMMENTS
+  $(document).delegate("#hc_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.hc_comments = $(this).val()
+  });
+
+  // FACILITIES MAIN ARENA
+  $(document).delegate("#f_main_arena a", "click", function() {
+    reviewToSubmit.f_main_arena = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES HOME GAME ATMOSPHERE
+  $(document).delegate("#f_home_atmosphere a", "click", function() {
+    reviewToSubmit.f_home_atmosphere = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES WEIGHT ROOM
+  $(document).delegate("#f_weight_room a", "click", function() {
+    reviewToSubmit.f_weight_room = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES LOCKER ROOM
+  $(document).delegate("#f_locker_room a", "click", function() {
+    reviewToSubmit.f_locker_room = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES TRAINING FACILITY
+  $(document).delegate("#f_training_facility a", "click", function() {
+    reviewToSubmit.f_training_facility = parseInt($(this).attr('id'));
+  });
+
+  // FACILITIES COMMENTS
+  $(document).delegate("#f_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.f_comments = $(this).val()
+  });
+
+  // LOCATION NIGHTLIFE
+  $(document).delegate("#l_nightlife a", "click", function() {
+    reviewToSubmit.l_nightlife = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION COMMUNITY INTEREST
+  $(document).delegate("#l_community_interest a", "click", function() {
+    reviewToSubmit.l_community_interest = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION WEATHER
+  $(document).delegate("#l_weather a", "click", function() {
+    reviewToSubmit.l_weather = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION PROGRAM TRADITION
+  $(document).delegate("#l_program_tradition a", "click", function() {
+    reviewToSubmit.l_program_tradition = parseInt($(this).attr('id'));
+  });
+
+  // LOCATION COMMENTS
+  $(document).delegate("#l_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.l_comments = $(this).val()
+  });
+
+  // EDUCATION SCHOOL DIFFICULTY
+  $(document).delegate("#e_school_difficulty a", "click", function() {
+    reviewToSubmit.e_school_difficulty = parseInt($(this).attr('id'));
+  });
+
+  // EDUCATION ACADEMIC SUPPORT
+  $(document).delegate("#e_academic_support a", "click", function() {
+    reviewToSubmit.e_academic_support = parseInt($(this).attr('id'));
+  });
+
+  // EDUCATION SCHOOL REPUTATION
+  $(document).delegate("#e_school_reputation a", "click", function() {
+    reviewToSubmit.e_school_reputation = parseInt($(this).attr('id'));
+  });
+
+  // EDUCATION DID YOU GRADUATE: YES
+  $(document).delegate("#e_graduated_yes", "click", function() {
+    reviewToSubmit.e_graduated = true;
+
+  });
+
+  // EDUCATION DID YOU GRADUATE: NO
+  $(document).delegate("#e_graduated_no", "click", function() {
+    reviewToSubmit.e_graduated = false;
+  });
+
+  // EDUCATION
+  $(document).delegate("#e_comments", "keyup", function() {
+      // Every keyup in this textbox and the review object will update accordingly
+      reviewToSubmit.e_comments = $(this).val()
+  });
+
+
+  $(document).on('click', '#review-form-submit-button', function(e){
+    e.preventDefault();
+  // reviewToSubmit.coach_id = '1';
+  // reviewToSubmit.school_id = '1';
+  // reviewToSubmit.program_id = '1';
+
+  // reviewToSubmit.hc_player_relationships = '1';
+  // reviewToSubmit.hc_player_development = '2';
+  // reviewToSubmit.hc_recruiting = '3';
+  // reviewToSubmit.hc_pro_connections = '4';
+  // reviewToSubmit.hc_sport_knowledge = '5';
+  // reviewToSubmit.hc_would_play_with_again = true;
+  // reviewToSubmit.hc_comments = 'sssss';
+
+  // reviewToSubmit.f_main_arena = '3';
+  // reviewToSubmit.f_home_atmosphere = '3';
+  // reviewToSubmit.f_weight_room = '3';
+  // reviewToSubmit.f_locker_room = '3';
+  // reviewToSubmit.f_training_facility = '3';
+  // reviewToSubmit.f_comments = 'ddddd';
+
+  // reviewToSubmit.l_program_tradition = '3';
+  // reviewToSubmit.l_community_interest = '3';
+  // reviewToSubmit.l_weather = '3';
+  // reviewToSubmit.l_nightlife = '3';
+  // reviewToSubmit.l_comments = 'rrrrr';
+
+  // reviewToSubmit.e_school_difficulty = '4';
+  // reviewToSubmit.e_academic_support = '4';
+  // reviewToSubmit.e_school_reputation = '4';
+  // reviewToSubmit.e_graduated = true;
+  // reviewToSubmit.e_comments = 'eeeee';
+
+  // reviewToSubmit.conference_rival = 'eeee';
+  // reviewToSubmit.toughest_conference_place_to_play = 'eeee';
+
+    $(".empty_fields_table").empty()
+    $.ajax({
+      url: '/reviews',
+      type: "POST",
+      dataType: "json",
+      data: { review_data: reviewToSubmit},
+      success: function(response){
+        if(response.empty_fields[0] == 'saved') {
+          window.location.assign('/');
+        } else {
+          $('#empty-fields-div').removeClass('hidden')
+          // debugger
+          for(var x=0; x < response.empty_fields.length; x++) {
+            $('.empty_fields_table').append("<tr class='danger'><td>"+ response.empty_fields[x] +"</td></tr>")
+          }
+        }
+      }
+    });
+
+  });
 }
