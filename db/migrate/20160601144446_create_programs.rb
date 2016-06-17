@@ -15,6 +15,7 @@ class CreatePrograms < ActiveRecord::Migration
       t.integer :conference_titles
       t.string :website
       t.string :home_atmosphere
+      t.string :full_name
       t.references :school
       t.references :coach
       t.timestamps null: false

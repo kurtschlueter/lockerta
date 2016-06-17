@@ -1,5 +1,15 @@
 class ProgramsController < ApplicationController
 
+  def search
+    # puts '----------entered schools/search route----------'
+    # puts params[:input]
+
+    @schools = Program.search(params[:input])
+    if request.xhr?
+      render :json => {:data => @schools}
+    end
+  end
+
   def head_coach_of_program
     @school = School.find(params[:school_id])
     @program = @school.programs.find_by(sport: params[:program_sport])

@@ -30,13 +30,13 @@ $(document).delegate( ".school_search", "keyup", function(e) {
             $('.schools_table').removeClass('hidden')
         }
         $.ajax({
-          url: "/schools/search", // Route to the Script Controller method
+          url: "/programs/search", // Route to the Script Controller method
           type: "GET",
           dataType: "json",
           data: { input: input },
           success: function(data) {
             for (i = 0; i < data.data.length; i++) {
-              $(".schools_table").append("<tr class='danger'><td>"+ data.data[i].name+"</td></tr>");
+              $(".schools_table").append("<tr class='danger'><td><a href='/programs/" + data.data[i].id + "'>" + data.data[i].full_name+"</a></td></tr>");
             }
           }
         });
@@ -54,13 +54,14 @@ $(document).delegate( ".school_search", "keyup", function(e) {
             $('.schools_table').removeClass('hidden')
         }
         $.ajax({
-          url: "/schools/search", // Route to the Script Controller method
+          url: "/programs/search", // Route to the Script Controller method
           type: "GET",
           dataType: "json",
           data: { input: input },
           success: function(data) {
+
             for (i = 0; i < data.data.length; i++) {
-              $(".schools_table").append("<tr class='danger'><td>"+ data.data[i].name+"</td></tr>");
+              $(".schools_table").append("<tr class='danger'><td><a href='/programs/" + data.data[i].id + "'>" + data.data[i].full_name+"</a></td></tr>");
             }
           }
         });

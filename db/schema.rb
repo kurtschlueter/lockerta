@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160601153226) do
     t.integer  "conference_titles"
     t.string   "website"
     t.string   "home_atmosphere"
+    t.string   "full_name"
     t.integer  "school_id"
     t.integer  "coach_id"
     t.datetime "created_at",         null: false

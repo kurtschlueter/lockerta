@@ -4,7 +4,17 @@ class Program < ActiveRecord::Base
   has_many :reviews
   has_many :program_images
 
+  after_create :first_full_name
+
   validates :sport, :school_id, :coach_id, :facility_name, presence: true
+
+  def self.search(term)
+    @schools = where('LOWER(full_name) LIKE :term', term: "%#{term.downcase}%")
+  end
+
+  def first_full_name
+    update_attributes(full_name: school.name + ' ' + sport)
+  end
 
   def average_main_arena
     if reviews.length > 0
