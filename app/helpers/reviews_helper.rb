@@ -20,7 +20,13 @@ module ReviewsHelper
   def self.dom_ids_to_string_empty_fields(id_array)
     output_array = []
     id_array.each do |single_id|
-      if single_id == "hc_player_relationships"
+      if single_id == "school_id"
+        output_array << "School"
+      elsif single_id == "program_id"
+        output_array << "Program"
+      elsif single_id == "coach_id"
+        output_array << "Head Coach"
+      elsif single_id == "hc_player_relationships"
         output_array << "Head Coach Player Relationships"
       elsif single_id == "hc_player_development"
         output_array << "Head Coach Player Development"

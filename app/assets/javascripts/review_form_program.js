@@ -37,6 +37,42 @@ var reviewToSubmit = {
   toughest_conference_place_to_play: ''
 };
 
+// Reason I did this is becuase before, the data would save in this review to submit object but the form would reset when clicking out of reviews/new and clicking back in. So I could fill half of it out, click out and back in, the form would reset, and if i clicked submit, only half of the fill out error messages would appear even tho the entire form was blank.
+$(document).on('click', ".link-to-new-review", function(){
+  reviewToSubmit.coach_id = '';
+  reviewToSubmit.school_id = '';
+  reviewToSubmit.program_id = '';
+
+  reviewToSubmit.hc_player_relationships = '';
+  reviewToSubmit.hc_player_development = '';
+  reviewToSubmit.hc_recruiting = '';
+  reviewToSubmit.hc_pro_connections = '';
+  reviewToSubmit.hc_sport_knowledge = '';
+  reviewToSubmit.hc_would_play_with_again = '';
+  reviewToSubmit.hc_comments = '';
+
+  reviewToSubmit.f_main_arena = '';
+  reviewToSubmit.f_home_atmosphere = '';
+  reviewToSubmit.f_weight_room = '';
+  reviewToSubmit.f_locker_room = '';
+  reviewToSubmit.f_training_facility = '';
+  reviewToSubmit.f_comments = '';
+
+  reviewToSubmit.l_program_tradition = '';
+  reviewToSubmit.l_community_interest = '';
+  reviewToSubmit.l_weather = '';
+  reviewToSubmit.l_nightlife = '';
+  reviewToSubmit.l_comments = '';
+
+  reviewToSubmit.e_school_difficulty = '';
+  reviewToSubmit.e_academic_support = '';
+  reviewToSubmit.e_school_reputation = '';
+  reviewToSubmit.e_graduated = '';
+  reviewToSubmit.e_comments = '';
+
+  reviewToSubmit.conference_rival = '';
+  reviewToSubmit.toughest_conference_place_to_play = '';
+});
 
 // This is my json to html function for the programs dropdown and the head coach dropdown
 var jsonToHTMLselectOptions = function(object_array, attr) {
