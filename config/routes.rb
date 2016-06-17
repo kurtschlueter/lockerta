@@ -8,13 +8,13 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :schools do
-    get :search, :on => :collection
     get :program_list_in_school, :on => :collection
   end
 
   resources :programs do
     get :head_coach_of_program, :on => :collection
     get :rivals_of_program, :on => :collection
+    get :search, :on => :collection
   end
 
   resources :articles
