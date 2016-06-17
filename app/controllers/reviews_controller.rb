@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
 
-
   def index
 
   end
@@ -68,7 +67,8 @@ class ReviewsController < ApplicationController
           render :json => {:empty_fields => ['saved']}
       end
     else
-      render :json => {:empty_fields => empty_fields}
+      output = ReviewsHelper.dom_ids_to_string_empty_fields(empty_fields)
+      render :json => {:empty_fields => output}
     end
   end
 
