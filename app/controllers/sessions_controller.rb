@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       redirect_to "/"
     else
       redirect_to "/login"
+      flash[:error] = 'Email and password do not match.'
     end
   end
 

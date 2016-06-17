@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
       @schools = School.all
     else
       redirect_to "/login"
+      flash[:error] = "Please log in to submit review"
     end
   end
 

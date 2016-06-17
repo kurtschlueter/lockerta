@@ -121,6 +121,9 @@
     toastr.error("<%= error %>")
   <% end %>
 <% end %>
+<% if flash[:error] %>
+    toastr.error("<%= flash[:error] %>")
+<% end %>
 
 <% if flash[:info] %>
     toastr.info("<%= flash[:info] %>")
