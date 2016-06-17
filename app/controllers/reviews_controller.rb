@@ -20,9 +20,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
     empty_fields = []
-
     params[:review_data].each do |key, value|
       if value == ''
         empty_fields << key
@@ -31,11 +29,9 @@ class ReviewsController < ApplicationController
 
     if empty_fields.length == 0
       @user = current_user
-
       @coach = Coach.find(params[:review_data][:coach_id].to_i)
       @school = School.find(params[:review_data][:school_id].to_i)
       @program = Program.find(params[:review_data][:program_id].to_i)
-
 
       @review = Review.new(user: @user, coach: @coach, school: @school, program: @program,
               hc_player_relationships: params[:review_data][:hc_player_relationships].to_i,
@@ -66,6 +62,7 @@ class ReviewsController < ApplicationController
 
       if @review.save
           render :json => {:empty_fields => ['saved']}
+          flash[:success] = 'Review successfully submitted'
       end
     else
       output = ReviewsHelper.dom_ids_to_string_empty_fields(empty_fields)
@@ -74,25 +71,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    # article = Article.find(params[:id])
-    # flash.notice = "Article '#{article.title}' deleted!"
-    # article.destroy
-
-    # redirect_to action: "index"
   end
 
   def edit
-    # @article = Article.find(params[:id])
   end
 
   def update
-    redirect_to '/'
-    # @article = Article.find(params[:id])
-    # @article.update(article_params)
-
-    # flash.notice = "Article '#{@article.title}' Updated!"
-
-    # redirect_to article_path(@article)
   end
-
 end
