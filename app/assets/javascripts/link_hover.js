@@ -29,9 +29,9 @@ var linkHover = function() {
         console.log('entered jsontohtmltable func')
         var jsonHTML = '<table class="table table-striped table-hover"><tbody>'
         // debugger
-        for (var ii = 0; ii < jsonn.data.length; ii++) {
+        for (var ii = 0; ii < jsonn.programs.length; ii++) {
           console.log('entered for loop')
-            jsonHTML = jsonHTML + "<tr class='danger'><td>" + jsonn.data[ii].sport + "</tr></td>"
+            jsonHTML = jsonHTML + "<tr class='danger'><td><a href='/programs/" + jsonn.programs[ii].id + "'>" + jsonn.programs[ii].sport + "</a></tr></td>"
             // debugger
         }
 
@@ -47,6 +47,7 @@ var linkHover = function() {
         dataType: "json",
         data: { school_name: $(this).html() },
         success: function(response){
+          console.log(response)
               $tr.popover({
                   title: 'Which team would you like to view?',
                   content: jsonToHTMLtable(response),
