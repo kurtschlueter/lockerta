@@ -12,7 +12,7 @@
           <h2>Facilities</h2>
           <h3><%= render_stars(program.average_facility_rating) %> <span class="lil-padding"><%= program.average_facility_rating %></span></h3>
           <h4>Main Arena/Stadium: <%= program.facility_name %></h4>
-          <h4>Alma Mater: <%= program.facility_capacity %></h4>
+          <h4>Capacity: <%= number_with_delimiter(program.facility_capacity, :delimiter => ',') %></h4>
         </div>
       </div>
 
@@ -88,7 +88,7 @@
     <div class="container">
         <h2 class="underline clear">Overview</h2>
         <p>
-          The <%= program.sport %> team plays their home games at the <%= program.facility_name %>. This facility was built in <%= program.facility_built %> and holds up to <%= program.facility_capacity %> spectators.  Players feel the home game atmosphere is <%= program.home_atmosphere %>, with average attendance totaling <%= program.average_attendance %> spectators. The top rated element of the facility is their <%= program.facility_strong_point %>, with the <%= program.facility_weak_point %> needing improvement. Overall, the facilities for this program are <%= program.facility_overall_ranking %>.
+          The <%= program.sport %> team plays their home games at the <%= program.facility_name %>. This facility was built in <%= program.facility_built %> and holds up to <%= number_with_delimiter(program.facility_capacity, :delimiter => ',') %> spectators.  Players feel the home game atmosphere is <%= program.home_atmosphere %>, with average attendance totaling <%= program.average_attendance %> spectators. The top rated element of the facility is their <%= program.facility_strong_point %>, with the <%= program.facility_weak_point %> needing improvement. Overall, the facilities for this program are <%= program.facility_overall_ranking %>.
         </p>
       </div>
   <% end %>
