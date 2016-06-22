@@ -6,6 +6,6 @@
   <div class="col-md-8 text-left rank-info">
     <h3><strong><%= school.location %></strong></h3>
     <h4 class="location-div" data-trigger="hover" data-toggle="popover"><%= school.name %></h4>
-    <h4>Population: <%= school.location_population %></h4>
+    <h4>Population: <%= number_with_delimiter(school.location_population, :delimiter => ',') %></h4>
   </div>
 </div>

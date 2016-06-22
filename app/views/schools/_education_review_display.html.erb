@@ -10,8 +10,8 @@
         <div class="col-md-7">
           <h2>Education</h2>
           <h3><%= render_stars(school.average_education_rating) %> <span class="lil-padding"><%= school.average_education_rating %></span></h3>
-          <h4>Enrollment: <%= school.enrollment %></h4>
-          <h4>Tuition Cost: <%= school.tuition %></h4>
+          <h4>Enrollment: <%= number_with_delimiter(school.enrollment, :delimiter => ',') %></h4>
+          <h4>Tuition Cost: <%= number_with_delimiter(school.tuition, :delimiter => ',') %></h4>
         </div>
       </div>
 
